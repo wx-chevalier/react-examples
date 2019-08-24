@@ -1,4 +1,4 @@
-import { IAppModule } from '@wx/rtw-core/src/constant/types';
+import { IAppModule } from 'rtw-core/src/constant/types';
 import axios from 'axios';
 import { vendors } from './config/vendors';
 import { init, registerModule, importApp } from './launcher';

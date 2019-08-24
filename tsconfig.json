@@ -22,7 +22,7 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "paths": {
-      "@wx/rtw-core": ["rtw-core/src/"]
+      "rtw-core": ["rtw-core/src/"]
     }
   },
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],

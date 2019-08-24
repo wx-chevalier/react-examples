@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-ncu
+ncu -u
  
 (cd ./packages/rtw-core && ncu -u)
 (cd ./packages/rtw-bootstrap && ncu -u)

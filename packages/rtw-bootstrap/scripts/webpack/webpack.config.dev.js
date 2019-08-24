@@ -1,5 +1,5 @@
 const path = require('path');
-const { externals } = require('@wx/rtw-core');
+const { externals } = require('rtw-core');
 
 const baseConfig = require('../../../../scripts/webpack/webpack.config.dev');
 

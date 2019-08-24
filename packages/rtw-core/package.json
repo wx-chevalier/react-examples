@@ -1,10 +1,10 @@
 {
-  "name": "@wx/rtw-core",
+  "name": "rtw-core",
   "version": "0.0.1",
-  "description": "@wx/rtw-core",
+  "description": "rtw-core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wxyyxc1992/fe-boilerplate"
+    "url": "https://github.com/wx-chevalier/fe-boilerplate"
   },
   "license": "MIT",
   "main": "dist/cjs/index.js",
@@ -14,7 +14,7 @@
     "webpack",
     "react"
   ],
-  "author": "wxyyxc1992@github",
+  "author": "wx-chevalier@github",
   "prettier": {
     "printWidth": 100,
     "singleQuote": true
@@ -36,12 +36,18 @@
     "test:watch": "npm test -- --watch",
     "test:cov": "npm run cleanCov && npm test -- --coverage"
   },
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-loader": "2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.13.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",

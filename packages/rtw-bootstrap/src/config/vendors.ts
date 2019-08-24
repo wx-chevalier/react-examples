@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 export const vendors = [
   {
-    id: '@wx/rtw-core',
+    id: 'rtw-core',
     version: '0.0.1',
     dev: {
       module: '/release/rtw-core/index.js'

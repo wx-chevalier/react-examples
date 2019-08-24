@@ -1,4 +1,4 @@
-const { externals } = require('@wx/rtw-core');
+const { externals } = require('rtw-core');
 const merge = require('webpack-merge');
 
 const umdConfig = require('../../../../scripts/webpack/webpack.config.umd');

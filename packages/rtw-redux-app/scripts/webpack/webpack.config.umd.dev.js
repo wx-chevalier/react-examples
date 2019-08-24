@@ -1,4 +1,4 @@
-const { externals } = require('@wx/rtw-core');
+const { externals } = require('rtw-core');
 const path = require('path');
 const merge = require('webpack-merge');
 

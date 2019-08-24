@@ -1,4 +1,4 @@
-import { IAppModule } from '@wx/rtw-core';
+import { IAppModule } from 'rtw-core';
 import { ComponentType } from 'react';
 
 import { importApp } from './index';

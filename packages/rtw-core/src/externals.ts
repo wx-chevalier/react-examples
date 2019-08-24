@@ -1,8 +1,8 @@
 export default {
-  '@wx/rtw-core': {
-    commonjs: '@wx/rtw-core',
-    commonjs2: '@wx/rtw-core',
-    amd: '@wx/rtw-core',
+  'rtw-core': {
+    commonjs: 'rtw-core',
+    commonjs2: 'rtw-core',
+    amd: 'rtw-core',
     root: 'rtwCore'
   },
   antd: 'antd',

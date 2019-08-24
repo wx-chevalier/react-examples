@@ -71,10 +71,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)?$/,
         loader: 'awesome-typescript-loader',
-        exclude: /node_modules/,
-        options: {
-          useBabel: true
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -129,7 +126,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
+    new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, eslint: true }),
     new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
     new webpack.IgnorePlugin(/\.js\.map$/)
   ],

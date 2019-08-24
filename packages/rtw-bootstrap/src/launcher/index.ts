@@ -1,4 +1,4 @@
-import { IInitOption } from '@wx/rtw-core';
+import { IInitOption } from 'rtw-core';
 import * as SystemJS from 'systemjs';
 
 import { ModuleResolver } from './resolvers/ModuleResolver';

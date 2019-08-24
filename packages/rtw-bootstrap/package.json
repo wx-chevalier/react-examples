@@ -1,17 +1,17 @@
 {
-  "name": "@wx/rtw-bootstrap",
+  "name": "rtw-bootstrap",
   "version": "0.0.1",
-  "description": "@wx/rtw-bootstrap",
+  "description": "rtw-bootstrap",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wxyyxc1992/fe-boilerplate"
+    "url": "https://github.com/wx-chevalier/fe-boilerplate"
   },
   "license": "MIT",
   "keywords": [
     "webpack",
     "react"
   ],
-  "author": "wxyyxc1992@github",
+  "author": "wx-chevalier@github",
   "prettier": {
     "printWidth": 100,
     "singleQuote": true
@@ -32,12 +32,22 @@
     "stats": "webpack --config ./scripts/webpack.config.prod.js --mode production --profile --json > dist/stats.json"
   },
   "dependencies": {
-    "@wx/rtw-core": "*"
+    "rtw-core": "*"
   },
   "devDependencies": {
     "@types/jest": "24.0.17",
     "@types/react-dom": "^16.8.5",
     "@types/systemjs": "^0.20.6",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-loader": "2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.13.0",
     "axios": "^0.19.0",
     "autoprefixer": "9.6.1",
     "awesome-typescript-loader": "^5.2.1",
@@ -64,9 +74,6 @@
     "systemjs": "5.x",
     "ts-jest": "^24.0.2",
     "ts-loader": "6.0.4",
-    "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^4.0.0",
     "typescript": "3.5.3",
     "uglifyjs-webpack-plugin": "2.2.0",
     "url-loader": "^2.1.0",

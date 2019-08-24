@@ -1,4 +1,4 @@
-import { IAppModule, IBasicModule, IInitOption } from '@wx/rtw-core';
+import { IAppModule, IBasicModule, IInitOption } from 'rtw-core';
 import * as SystemJS from 'systemjs';
 
 import { loadCSS } from '../loaders';
