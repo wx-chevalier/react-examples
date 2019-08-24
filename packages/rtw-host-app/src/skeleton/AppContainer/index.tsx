@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import * as React from 'react';
 
 // import styles from './index.less';
-import Exception from '../../components/decorators/Exception';
+import { Exception } from 'rtw-components';
 import { ResolvedModule } from '../../manifest';
 
 const { PureComponent, Suspense, lazy } = React;
@@ -25,7 +25,7 @@ const appCache = {};
  * 应用懒加载与容错的容器
  */
 class AppContainer extends PureComponent<IProps> {
-  defaultProps = {
+  static defaultProps = {
     fallback: <Spin />
   };
 

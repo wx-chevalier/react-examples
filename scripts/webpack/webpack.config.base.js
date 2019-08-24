@@ -18,10 +18,12 @@ const buildEnv = {
 const moduleCSSLoader = {
   loader: 'css-loader',
   options: {
-    modules: true,
+    modules: {
+      mode: 'local',
+      localIdentName: 'rtw_[name]__[local]'
+    },
     sourceMap: false,
-    importLoaders: 2,
-    localIdentName: '[path][name]__[local]__[hash:base64:5]'
+    importLoaders: 2
   }
 };
 
