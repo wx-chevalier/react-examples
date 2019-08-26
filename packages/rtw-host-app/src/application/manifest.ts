@@ -1,7 +1,7 @@
 import { IAppModule } from 'rtw-core';
 import { ComponentType } from 'react';
 
-import { importApp } from './index';
+import { importApp } from '../index';
 
 export interface ResolvedModule {
   default: ComponentType<any>;
@@ -19,7 +19,7 @@ const _manifest: { [key: string]: Module } = {
   'page-a': {
     name: 'PageA',
     type: 'page',
-    loader: () => import(/* webpackChunkName: "page-a" */ './pages/page-a')
+    loader: () => import(/* webpackChunkName: "page-a" */ '../pages/page-a')
   },
   'redux-app': {
     name: 'Redux App',

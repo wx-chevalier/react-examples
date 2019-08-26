@@ -6,7 +6,7 @@ import * as React from 'react';
 
 // import styles from './index.less';
 import { Exception } from 'rtw-components';
-import { ResolvedModule } from '../../manifest';
+import { ResolvedModule } from '../../application/manifest';
 
 const { PureComponent, Suspense, lazy } = React;
 

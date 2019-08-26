@@ -8,8 +8,8 @@ import 'antd/dist/antd.less'; // 引入官方提供的 less 样式入口文件
 import { Exception } from 'rtw-components';
 
 import * as styles from './index.less';
-import { manifest, Module } from '../../manifest';
-import AppContainer from '../AppContainer';
+import { manifest, Module } from '../manifest';
+import AppContainer from '../../skeleton/AppContainer';
 import store from '../../store/redux/store';
 
 export interface IAppProps extends RouteComponentProps {}
