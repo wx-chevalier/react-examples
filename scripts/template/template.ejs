@@ -12,6 +12,14 @@
   <meta charset="utf-8">
   <meta content="ie=edge" http-equiv="x-ua-compatible">
 
+  <%if (htmlWebpackPlugin.options.useCDN) { %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.6/index.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/history/4.9.0/history.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.0.1/react-router-dom.min.js"></script>
+  <% } %>
+
   <%if (htmlWebpackPlugin.options.baseHref) { %>
   <base href="<%= htmlWebpackPlugin.options.baseHref %>">
   <% } %>
