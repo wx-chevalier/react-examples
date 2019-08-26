@@ -1,0 +1,36 @@
+@import '../../../../styles/variables.less';
+
+.container {
+  background-color: @backgroundColorSecondary;
+  border-radius: @borderRadiusMedium;
+  box-shadow: @shadowCover;
+  padding: 16px 8px;
+}
+
+.value {
+  display: inline-block;
+  text-align: center;
+  min-width: 32px;
+}
+
+.btn {
+  .button();
+
+  padding: 8px 16px;
+  margin: 0 8px;
+  min-width: 60px;
+
+  background-color: @white;
+  border-color: @borderColor;
+  border-radius: @borderRadiusMedium;
+
+  &:hover {
+    background-color: @primaryColor;
+    border-color: @primaryColor;
+
+    &:active {
+      background-color: darken(@primaryColor, 8%);
+      border-color: darken(@primaryColor, 8%);
+    }
+  }
+}

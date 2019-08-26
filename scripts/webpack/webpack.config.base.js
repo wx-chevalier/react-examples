@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require('path');
 const process = require('process');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+// const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const webpack = require('webpack');
 
 const rootPath = process.cwd();
@@ -34,7 +36,7 @@ const lessLoader = {
       'primary-color': '#5d4bff'
     },
     javascriptEnabled: true,
-    paths: [path.resolve(rootPath, './node_modules')]
+    paths: [path.resolve(rootPath, './node_modules'), path.resolve(rootPath, './src')]
   }
 };
 
@@ -53,8 +55,8 @@ module.exports = {
     alias: {
       systemjs: path.resolve(rootPath, './node_modules/systemjs/dist/system-production.js')
     },
-    extensions: ['.ts', '.tsx', '.js', '.css', 'less'],
-    plugins: [new TSConfigPathsPlugin()]
+    extensions: ['.ts', '.tsx', '.js', '.css', '.less']
+    // plugins: [new TSConfigPathsPlugin()]
   },
   output: {
     path: buildEnv.build,

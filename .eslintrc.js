@@ -7,5 +7,12 @@ module.exports = {
     'prettier/@typescript-eslint',
     'prettier/react'
   ],
-  ig
+  rules: {
+    '@typescript-eslint/no-var-require': 0,
+    '@typescript-eslint/interface-name-prefix': 0,
+    '@typescript-eslint/explicit-member-accessibility': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-empty-interface': 0,
+    '@typescript-eslint/no-non-null-assertion': 0
+  }
 };

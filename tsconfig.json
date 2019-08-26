@@ -20,10 +20,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "paths": {
-      "rtw-core": ["rtw-core/src/"]
-    }
+    "skipLibCheck": true
   },
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
   "exclude": [

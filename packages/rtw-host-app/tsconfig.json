@@ -1,4 +1,9 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*", "../rtw-components/src/Exception.tsx"]
+  "compilerOptions": {
+    "paths": {
+      "skeleton/*": ["src/skeleton/*"]
+    }
+  },
+  "include": ["src/**/*", "src/typings/types.d.ts"]
 }

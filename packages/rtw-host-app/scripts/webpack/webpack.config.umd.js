@@ -1,8 +1,9 @@
 const { externals } = require('rtw-core');
 const merge = require('webpack-merge');
 
+const resolveConfig = require('./webpack.config.resolve');
 const umdConfig = require('../../../../scripts/webpack/webpack.config.umd');
 
-module.exports = merge(umdConfig, {
+module.exports = merge(resolveConfig, umdConfig, {
   externals
 });

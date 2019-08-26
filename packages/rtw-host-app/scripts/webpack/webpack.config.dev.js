@@ -1,9 +1,10 @@
 const path = require('path');
 const merge = require('webpack-merge');
 
+const resolveConfig = require('./webpack.config.resolve');
 const devConfig = require('../../../../scripts/webpack/webpack.config.dev');
 
-module.exports = merge(devConfig, {
+const config = merge(resolveConfig, devConfig, {
   entry: {
     index: path.resolve(__dirname, '../../src/index.sa')
   },
@@ -11,3 +12,5 @@ module.exports = merge(devConfig, {
     contentBase: path.resolve(__dirname, '../../public')
   }
 });
+
+module.exports = config;

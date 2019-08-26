@@ -17,7 +17,7 @@ export const actions = createActions({
 export default handleActions<IState, any>(
   {
     [actions.incr.toString()](state: IState, { error, payload }) {
-      return { ...state, count: state.count + payload };
+      return { ...state, count: state.count + payload, error };
     }
   },
   initialState

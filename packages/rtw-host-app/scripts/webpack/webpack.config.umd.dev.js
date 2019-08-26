@@ -2,9 +2,10 @@ const { externals } = require('rtw-core');
 const path = require('path');
 const merge = require('webpack-merge');
 
+const resolveConfig = require('./webpack.config.resolve');
 const devConfig = require('../../../../scripts/webpack/webpack.config.dev');
 
-module.exports = merge(devConfig, {
+module.exports = merge(resolveConfig, devConfig, {
   devServer: {
     contentBase: path.resolve(__dirname, '../../public'),
     port: 8081

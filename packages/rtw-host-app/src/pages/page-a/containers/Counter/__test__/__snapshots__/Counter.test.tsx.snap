@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter Component render component 1`] = `
+<div
+  className="counter-test container"
+>
+  <div>
+    <span
+      className="value"
+    >
+      0
+    </span>
+    <button
+      className="btn"
+      onClick={[Function]}
+      type="button"
+    >
+      +1
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+      type="button"
+    >
+      -1
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+      type="button"
+    >
+      +2
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+      type="button"
+    >
+      -3
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+      type="button"
+    >
+      I need a dialog...
+    </button>
+  </div>
+  <Component
+    onCancel={[Function]}
+    onOK={[Function]}
+    show={false}
+  />
+</div>
+`;

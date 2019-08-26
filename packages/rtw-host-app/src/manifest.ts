@@ -25,7 +25,7 @@ const _manifest: { [key: string]: Module } = {
     name: 'Redux App',
     type: 'app',
     // 这里在 rtw-bootstrap 中完成了注册，这里直接加载导入
-    loader: () => importApp!('http://redux-app')
+    loader: () => importApp && importApp('http://redux-app')
   }
 };
 
@@ -40,7 +40,7 @@ if (window.__DEV_APP__) {
   _manifest[window.__DEV_APP__.id] = {
     ...window.__DEV_APP__,
     type: 'app',
-    loader: () => importApp!(window.__DEV_APP__!.module)
+    loader: () => importApp && importApp(window.__DEV_APP__!.module)
   };
 }
 
