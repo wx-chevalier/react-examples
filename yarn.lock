@@ -1819,8 +1819,8 @@
 
 "@types/systemjs@^0.20.6":
   version "0.20.6"
-  resolved "https://registry.npmjs.org/@types/systemjs/-/systemjs-0.20.6.tgz#79838d2b4bce9c014330efa0b4c7b9345e830a72"
-  integrity sha512-p3yv9sBBJXi3noUG216BpUI7VtVBUAvBIfZNTiDROUY31YBfsFHM4DreS7XMekN8IjtX0ysvCnm6r3WnirnNeA==
+  resolved "https://registry.npm.taobao.org/@types/systemjs/download/@types/systemjs-0.20.6.tgz#79838d2b4bce9c014330efa0b4c7b9345e830a72"
+  integrity sha1-eYONK0vOnAFDMO+gtMe5NF6DCnI=
 
 "@types/webpack-env@*":
   version "1.14.0"
@@ -9407,6 +9407,11 @@ open@^6.1.0, open@^6.3.0:
   dependencies:
     is-wsl "^1.1.0"
 
+opencollective-postinstall@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/opencollective-postinstall/download/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
+  integrity sha1-Vlfxvt5ptuM6RZObBh61PTxsOok=
+
 opn@^5.5.0:
   version "5.5.0"
   resolved "https://registry.npmjs.org/opn/-/opn-5.5.0.tgz#fc7164fab56d235904c51c3b27da6758ca3b9bfc"
@@ -12836,10 +12841,10 @@ symbol.prototype.description@^1.0.0:
   dependencies:
     has-symbols "^1.0.0"
 
-systemjs@5.x:
+systemjs@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.npmjs.org/systemjs/-/systemjs-5.0.0.tgz#8d8fb57c0ad32d73e34b7a7c0c63bd39b318008f"
-  integrity sha512-hnD/IMQhH0UmawiIGlYVnkCPUbbO/WDQjOC+Q4PewHBdsagI1OHH1re1sg1AYFqq7p9ps6b1Bsx4xCeoeIZSCw==
+  resolved "https://registry.npm.taobao.org/systemjs/download/systemjs-5.0.0.tgz#8d8fb57c0ad32d73e34b7a7c0c63bd39b318008f"
+  integrity sha1-jY+1fArTLXPjS3p8DGO9ObMYAI8=
 
 table@^5.2.3:
   version "5.4.6"
@@ -13114,6 +13119,14 @@ trim-right@^1.0.1:
   resolved "https://registry.npmjs.org/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
+ts-import-plugin@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.npm.taobao.org/ts-import-plugin/download/ts-import-plugin-1.6.1.tgz#96477d241a154954508aa1397be03000735f98d0"
+  integrity sha1-lkd9JBoVSVRQiqE5e+AwAHNfmNA=
+  dependencies:
+    opencollective-postinstall "^2.0.2"
+    tslib "^1.10.0"
+
 ts-jest@^24.0.0, ts-jest@^24.0.2:
   version "24.0.2"
   resolved "https://registry.npmjs.org/ts-jest/-/ts-jest-24.0.2.tgz#8dde6cece97c31c03e80e474c749753ffd27194d"
@@ -13176,7 +13189,7 @@ tsconfig-paths@^3.4.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.10.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==

@@ -1,4 +1,3 @@
-const { externals } = require('rtw-core');
 const path = require('path');
 const merge = require('webpack-merge');
 
@@ -8,7 +7,7 @@ module.exports = merge(devConfig, {
   devServer: {
     contentBase: path.resolve(__dirname, '../../public')
   },
-  externals,
+
   output: {
     libraryTarget: 'umd'
   }

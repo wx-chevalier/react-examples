@@ -11,7 +11,7 @@ export class ModuleResolver {
 
   public readonly isRegistered: boolean = false;
 
-  public readonly systemConfig: SystemJS.Config = { map: {} };
+  public readonly systemConfig: any = { map: {} };
 
   public readonly css: string[] = [];
 

@@ -3,9 +3,10 @@
 const path = require('path');
 const process = require('process');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-// const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const webpack = require('webpack');
 const ThemeColorReplacer = require('webpack-theme-color-replacer');
+const tsImportPluginFactory = require('ts-import-plugin');
+const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const rootPath = process.cwd();
 const packageName = require(path.resolve(rootPath, 'package.json'));
@@ -53,11 +54,8 @@ module.exports = {
     index: path.resolve(buildEnv.rootPath, './src/index.tsx')
   },
   resolve: {
-    alias: {
-      systemjs: path.resolve(rootPath, './node_modules/systemjs/dist/system-production.js')
-    },
-    extensions: ['.ts', '.tsx', '.js', '.css', '.less']
-    // plugins: [new TSConfigPathsPlugin()]
+    extensions: ['.ts', '.tsx', '.js', '.css', '.less'],
+    plugins: [new TSConfigPathsPlugin()]
   },
   output: {
     path: buildEnv.build,
@@ -76,6 +74,11 @@ module.exports = {
       {
         test: /\.(ts|tsx)?$/,
         loader: 'awesome-typescript-loader',
+        options: {
+          getCustomTransformers: () => ({
+            before: [tsImportPluginFactory(/** options */)]
+          })
+        },
         exclude: /node_modules/
       },
       {

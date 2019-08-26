@@ -4,7 +4,7 @@
     "lib": ["es6", "es7", "dom", "scripthost", "webworker"],
     "jsx": "react",
     "target": "es5",
-    "module": "commonjs",
+    "module": "ESNext",
     "moduleResolution": "node",
     "sourceMap": true,
     "allowJs": false,

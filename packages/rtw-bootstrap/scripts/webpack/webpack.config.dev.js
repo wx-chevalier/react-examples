@@ -1,13 +1,11 @@
 const path = require('path');
-const { externals } = require('rtw-core');
+const merge = require('webpack-merge');
 
+const resolveConfig = require('./webpack.config.resolve');
 const baseConfig = require('../../../../scripts/webpack/webpack.config.dev');
 
-module.exports = {
-  ...baseConfig,
+module.exports = merge(baseConfig, resolveConfig, {
   devServer: {
-    ...baseConfig.devServer,
     contentBase: path.resolve(__dirname, '../../public')
-  },
-  externals
-};
+  }
+});

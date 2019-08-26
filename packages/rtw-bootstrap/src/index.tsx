@@ -49,7 +49,7 @@ if (!hostApp) {
   throw new Error('Please set __HOST_APP__');
 }
 
-importApp(hostApp.module).then(hostAppModule => {
+importApp(hostApp.module).then((hostAppModule: any) => {
   if (typeof hostAppModule.render === 'function') {
     hostAppModule.render((module: string) => importApp(module));
   } else {

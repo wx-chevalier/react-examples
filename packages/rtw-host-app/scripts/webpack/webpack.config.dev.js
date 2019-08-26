@@ -6,7 +6,7 @@ const devConfig = require('../../../../scripts/webpack/webpack.config.dev');
 
 const config = merge(resolveConfig, devConfig, {
   entry: {
-    index: path.resolve(__dirname, '../../src/index.sa')
+    index: path.resolve(__dirname, '../../src/index')
   },
   devServer: {
     contentBase: path.resolve(__dirname, '../../public')

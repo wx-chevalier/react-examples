@@ -12,7 +12,7 @@ export function importApp(moduleName: string) {
 
 /** 注册某个模块 */
 export function registerModule(moduleName: string, moduleExports: object) {
-  return SystemJS.registerDynamic(moduleName, [], false, (_1, _2, module) => {
+  return SystemJS.registerDynamic(moduleName, [], false, (_1: any, _2: any, module: any) => {
     module.exports = moduleExports;
   });
 }
