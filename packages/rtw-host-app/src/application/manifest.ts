@@ -1,7 +1,7 @@
 import { IAppModule } from 'rtw-core';
 import { ComponentType } from 'react';
 
-import { importApp } from '../index';
+import { importApp } from '../index.umd';
 
 export interface ResolvedModule {
   default: ComponentType<any>;

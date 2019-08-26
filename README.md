@@ -41,11 +41,16 @@ $ cd .. & npm start
 ## Features
 
 - 非 APP 类可单独发布，APP 类可单独运行，与发布。发布版本可包含 ES, CJS, UMD 等，dist 目录下包含 ES/CJS 模块，build 目录下包含 APP 完整资源以及 UMD 模块。
-- 版本控制: 子应用资源不使用 Hash 方式，而是使用语义化版本，`/[cdnHost]/[projectName]/[subAppName]/[x.y.z]/index.{js,css}`
-- 样式，LESS 文件支持 CSS Modules，CSS/SCSS 使用标准 CSS
-- 状态管理，灵活支持 Redux/MobX/Dva 等不同的状态管理框架，对于 Redux 提供全局统一的 Store 声明
 
-# Structure | 项目结构
+- 版本控制: 子应用资源不使用 Hash 方式，而是使用语义化版本，`/[cdnHost]/[projectName]/[subAppName]/[x.y.z]/index.{js,css}`。
+
+- 样式，LESS 文件支持 CSS Modules，CSS/SCSS 使用标准 CSS。
+
+- 状态管理，灵活支持 Redux/MobX/Dva 等不同的状态管理框架，对于 Redux 提供全局统一的 Store 声明。
+
+- 动态样式切换
+
+## Structure | 项目结构
 
 完整的微前端应用，可能会包含以下组成部分：
 
@@ -81,6 +86,16 @@ $ cd .. & npm start
 如果希望在子应用 A 中加载子应用 B 的实例，则应该使用类似于依赖注入的方式，从统一的注册中心中获取该实例对象。所有各个模块共享的基础库，都必须以 UMD 模式加载到全局；rtw-host-app 中声明与使用需要展示哪些模块，rtw-bootstrap 中注册可提供的 UMD 子模块。
 
 项目使用 Webpack 作为项目的配置打包工具，同样遵循透明原则；所有的子模块中的 Webpack 配置文件是引用并根据自身需求修改之后的根目录下的 scripts 中的配置文件。值得一提的是，根据 Node 的模块索引规则，scripts 目录下的配置文件会引用根目录下的 node_modules 文件，因此同样需要在根目录下安装 Webpack 及相关的依赖。
+
+# 开发模式
+
+## Mono Repo 模式
+
+进行代码级别的交流
+
+## Multiple Repo 模式
+
+纯分布式开发模式
 
 # 开发模式
 
@@ -154,10 +169,6 @@ export function render(_importApp: Function) {
 可以看出子应用的启动需要依赖于 rtw-bootstrap 以及 rtw-host-app，如果项目已经发布上线，那么建议是直接从 CDN 加载资源；否则可以将资源放置到 `public/release` 目录下。如果本地需要同时调试 Host APP，则直接也将 Host APP 以开发方式运行（`npm run dev`），然后直接引入 Webpack Dev Server 生成的资源地址即可。
 
 # About
-
-## Todos
-
-- [ ] 使用 webpack-merge 替代目前的朴素对象合并
 
 ## ChangeLog
 
