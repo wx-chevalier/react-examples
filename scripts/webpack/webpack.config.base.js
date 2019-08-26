@@ -135,7 +135,7 @@ module.exports = {
     new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
     new webpack.IgnorePlugin(/\.js\.map$/),
     new ThemeColorReplacer({
-      fileName: 'css/theme-colors-[contenthash:8].css',
+      fileName: 'theme-colors-[contenthash:8].css',
       matchColors: getAntdSerials('#5d4bff'), // 主色系列
       // 改变样式选择器，解决样式覆盖问题
       changeSelector(selector) {

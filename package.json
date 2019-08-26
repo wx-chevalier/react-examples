@@ -4,7 +4,7 @@
   "description": "Micro-Frontend Boilerplate, with React & TS & Webpack",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wx-chevalier/fe-boilerplate"
+    "url": "https://github.com/wx-chevalier/fe-boilerplates"
   },
   "license": "MIT",
   "keywords": [

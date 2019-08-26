@@ -8,13 +8,13 @@ mf-rtw 是 [fe-boilerplates](https://github.com/wx-chevalier/fe-boilerplates) �
 
 ![](https://user-images.githubusercontent.com/5803001/44003230-de68ac5c-9e81-11e8-81f5-8092f7a9b421.png)
 
-[fe-boilerplates](https://github.com/wx-chevalier/fe-boilerplate) 是笔者的前端项目模板集锦，包含了单模块单页面、单模块多页面、(伪)多模块单页面、微前端项目等不同类型的模板，微前端项目模块前者的区别即在于微前端中的各个模块能够独立开发，独立版本发布，独立部署，独立加载。分布式协作势必会带来协同以及开发流程上的挑战，在设计微前端项目架构的时候开发易用性也是非常重要的考量点。在[年度总结](https://github.com/wx-chevalier/Developer-Zero-To-Mastery/tree/master/TechRoad/2018)中我也讨论了使用 TS 面向重构编程的意义，欢迎参考 [Backend-Boilerplates/node](https://github.com/wx-chevalier/Backend-Boilerplates) 中的 `ts-*` 项目，使用 TS 进行全栈开发。
+[fe-boilerplates](https://github.com/wx-chevalier/fe-boilerplates) 是笔者的前端项目模板集锦，包含了单模块单页面、单模块多页面、(伪)多模块单页面、微前端项目等不同类型的模板，微前端项目模块前者的区别即在于微前端中的各个模块能够独立开发，独立版本发布，独立部署，独立加载。分布式协作势必会带来协同以及开发流程上的挑战，在设计微前端项目架构的时候开发易用性也是非常重要的考量点。在[年度总结](https://github.com/wx-chevalier/Developer-Zero-To-Mastery/tree/master/TechRoad/2018)中我也讨论了使用 TS 面向重构编程的意义，欢迎参考 [Backend-Boilerplates/node](https://github.com/wx-chevalier/Backend-Boilerplates) 中的 `ts-*` 项目，使用 TS 进行全栈开发。
 
 当我们考量项目框架、模板或者脚手架的时候，首先想到的点就是希望尽可能对上层屏蔽细节，但是对于长期维护的、多人协作的中大型项目而言，如果项目的主导者直接使用了部分抽象的脚手架，不免会给未来的更新、迭代带来一定的技术负债；同时，目前也有很多成熟的工程化脚手架，因此笔者选择以项目模板的形式抽象出微前端中所需要的部分。尽可能地遵循简约、直观的原则，减少抽象/Magic Function 等；大型项目可能会抽象出专用的开发工具流，但是对于大部分项目而言，在现有框架/工具链的基础上进行适当封装会是较优选择。
 
 ```sh
 # 拉取并且提取出子项目
-git clone https://github.com/wx-chevalier/fe-boilerplate
+git clone https://github.com/wx-chevalier/fe-boilerplates
 cp fe-boilerplate/micro-frontend/react-ts-webpack ../
 
 # 添加全局的依赖更新工具
@@ -91,11 +91,11 @@ $ cd .. & npm start
 
 ## Mono Repo 模式
 
-进行代码级别的交流
+往往采用 Mono Repo，进行代码级别的交流
 
 ## Multiple Repo 模式
 
-纯分布式开发模式
+往往采用 Multiple Repo，纯分布式开发模式
 
 # 开发模式
 
