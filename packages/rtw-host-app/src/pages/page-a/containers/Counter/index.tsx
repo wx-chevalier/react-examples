@@ -1,7 +1,8 @@
 import * as cs from 'classnames';
 import * as React from 'react';
 
-import { BaseReactProps } from '../../../../skeleton';
+import { BaseReactProps } from '~skeleton/types/props';
+
 import { ExampleModal } from '../../components/ExampleModal';
 
 import * as styles from './index.less';
@@ -14,6 +15,7 @@ export const Counter = (props: CounterProps) => {
   const { className, value: initialValue } = props;
   const [value, setValue] = React.useState(initialValue);
   const [showModal, setShowModal] = React.useState(false);
+
   return (
     <div className={cs(className, styles.container)}>
       <div>

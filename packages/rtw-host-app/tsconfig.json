@@ -1,9 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "skeleton/*": ["src/skeleton/*"]
+      "~skeleton/*": ["src/skeleton/*"]
     }
   },
-  "include": ["src/**/*", "src/typings/types.d.ts"]
+  "include": ["src/**/*"]
 }

@@ -1,33 +1,28 @@
-@import "../../styles/variables.less";
+@import '../../../../styles/variables.less';
 
-.container
-{
-    .fullWidth();
+.container {
+  .fullWidth();
 }
 
-.nav
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-bottom: 2px solid @textColor;
+  border-bottom: 2px solid @textColor;
 }
 
-.link
-{
-    padding: 4px 16px;
-    transition-duration: .2s;
-    transition-property: background-color, color;
+.link {
+  padding: 4px 16px;
+  transition-duration: 0.2s;
+  transition-property: background-color, color;
 
-    &:hover
-    {
-        background-color: @backgroundColorSecondary;
-    }
+  &:hover {
+    background-color: @backgroundColorSecondary;
+  }
 
-    &.active
-    {
-        color: @white;
-        background-color: @textColor;
-    }
+  &.active {
+    color: @white;
+    background-color: @textColor;
+  }
 }

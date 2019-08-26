@@ -22,7 +22,7 @@ const moduleCSSLoader = {
   options: {
     modules: {
       mode: 'local',
-      localIdentName: 'rtw_[name]__[local]'
+      localIdentName: 'rtw_[hash:base64:5]_[local]'
     },
     sourceMap: false,
     importLoaders: 2
@@ -130,7 +130,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, eslint: true }),
+    new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, eslint: false }),
     new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
     new webpack.IgnorePlugin(/\.js\.map$/)
   ],

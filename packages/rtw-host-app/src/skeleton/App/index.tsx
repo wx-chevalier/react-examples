@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { RouteComponentProps, Route, Redirect, Switch } from 'react-router';
 import { withRouter } from 'react-router-dom';
 
+import 'antd/dist/antd.less'; // 引入官方提供的 less 样式入口文件
+
 import { Exception } from 'rtw-components';
 
 import * as styles from './index.less';
