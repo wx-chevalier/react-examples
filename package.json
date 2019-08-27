@@ -43,6 +43,7 @@
     "not ie <= 10"
   ],
   "scripts": {
+    "postinstall": "node ./node_modules/husky/lib/installer/bin install",
     "bootstrap": "yarn install && yarn run build",
     "build": "npm run clean && yarn workspaces run build",
     "clean": "yarn workspaces run clean",
