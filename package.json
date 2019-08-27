@@ -15,6 +15,11 @@
     "typescript"
   ],
   "author": "wx-chevalier@github",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
   "prettier": {
     "printWidth": 100,
     "singleQuote": true
@@ -25,6 +30,11 @@
       "git add"
     ]
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
   "scripts": {
     "bootstrap": "yarn install && yarn run build",
     "build": "npm run clean && yarn workspaces run build",
@@ -32,6 +42,7 @@
     "cleanCov": "rimraf @coverage",
     "dev": "echo Please start in packages/rtw-host-app",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint-staged": "lint-staged",
     "precommit": "lint-staged",
     "prettier-all": "prettier --write 'src/**/*' '!src/{assets,datas}/**'",
     "start": "echo Please start in packages/rtw-host-app",
