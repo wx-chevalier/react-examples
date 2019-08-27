@@ -9,7 +9,7 @@ const initialState: IState = {
 };
 
 export const actions = createActions({
-  async incr(step: number = 1) {
+  async incr(step = 1) {
     return step;
   }
 });

@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk';
 import { configReducer } from './ducks';
 import { history } from '../../shared/env/history';
 
-declare var isProd: boolean;
+declare let isProd: boolean;
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: Function;

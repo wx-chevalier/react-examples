@@ -17,5 +17,5 @@ export interface UserModelState {
 }
 
 export class UserModel implements CurrentUser {
-  name: string = 'test';
+  name = 'test';
 }
