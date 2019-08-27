@@ -7,6 +7,7 @@ const webpack = require('webpack');
 const ThemeColorReplacer = require('webpack-theme-color-replacer');
 const tsImportPluginFactory = require('ts-import-plugin');
 const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const RewriteImportPlugin = require('less-plugin-rewrite-import');
 
 const rootPath = process.cwd();
 const packageName = require(path.resolve(rootPath, 'package.json'));
@@ -38,7 +39,16 @@ const lessLoader = {
       'primary-color': '#5d4bff'
     },
     javascriptEnabled: true,
-    paths: [path.resolve(rootPath, './node_modules'), path.resolve(rootPath, './src')]
+    paths: [path.resolve(rootPath, './node_modules'), path.resolve(rootPath, './src')],
+    plugins: [
+      new RewriteImportPlugin({
+        paths: {
+          '~antd/es/style/themes/default.less': function() {
+            return 'antd/es/style/themes/default.less';
+          }
+        }
+      })
+    ]
   }
 };
 
@@ -55,7 +65,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.css', '.less'],
-    plugins: [new TSConfigPathsPlugin()]
+    plugins: [new TSConfigPathsPlugin()],
+    alias: {
+      '@': path.resolve(rootPath, './src/'),
+      '~antd': path.resolve(rootPath, './node_modules/antd')
+    }
   },
   output: {
     path: buildEnv.build,

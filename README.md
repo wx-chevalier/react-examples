@@ -89,11 +89,11 @@ $ cd .. & npm start
 
 # 开发模式
 
-## Mono Repo 模式
+## 单体模式
 
 往往采用 Mono Repo，进行代码级别的交流
 
-## Multiple Repo 模式
+## 微前端模式
 
 往往采用 Multiple Repo，纯分布式开发模式
 

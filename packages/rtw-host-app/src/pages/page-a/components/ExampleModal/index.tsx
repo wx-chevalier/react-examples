@@ -2,7 +2,7 @@ import * as cs from 'classnames';
 import * as React from 'react';
 import { useInterval } from 'react-fxxking-hooks';
 
-import { BaseReactProps } from '../../../../skeleton';
+import { BaseReactProps } from '../../../../shared';
 import { Modal } from '../Modal';
 
 import * as styles from './index.less';

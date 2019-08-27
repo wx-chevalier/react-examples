@@ -9,8 +9,9 @@ import { Exception } from 'rtw-components';
 
 import * as styles from './index.less';
 import { manifest, Module } from '../manifest';
-import AppContainer from '../../skeleton/AppContainer';
+import AppContainer from '../../shared/AppContainer';
 import store from '../../store/redux/store';
+import { BasicLayout } from '../layouts/BasicLayout';
 
 export interface IAppProps extends RouteComponentProps {}
 
@@ -48,13 +49,15 @@ export class App extends React.Component<IAppProps, IAppState> {
 
     return (
       <section className={styles.container}>
-        <Switch>
-          <Route exact={true} path="/">
-            <Redirect to={routes[0]} />
-          </Route>
-          {routes.map(r => this.renderRoute(r, manifest[r]))}
-          <Route component={() => <Exception />} />
-        </Switch>
+        <BasicLayout breadcrumbNameMap={{}}>
+          <Switch>
+            <Route exact={true} path="/">
+              <Redirect to={routes[0]} />
+            </Route>
+            {routes.map(r => this.renderRoute(r, manifest[r]))}
+            <Route component={() => <Exception />} />
+          </Switch>
+        </BasicLayout>
       </section>
     );
   }

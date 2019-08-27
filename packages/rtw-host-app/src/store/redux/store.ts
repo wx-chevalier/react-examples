@@ -4,7 +4,7 @@ import promiseMiddleware from 'redux-promise-middleware';
 import thunkMiddleware from 'redux-thunk';
 
 import { configReducer } from './ducks';
-import { history } from '../../skeleton/env/history';
+import { history } from '../../shared/env/history';
 
 declare var isProd: boolean;
 declare global {

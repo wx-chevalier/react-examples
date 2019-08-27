@@ -1,10 +1,9 @@
 const path = require('path');
 const merge = require('webpack-merge');
 
-const resolveConfig = require('./webpack.config.resolve');
 const devConfig = require('../../../../scripts/webpack/webpack.config.dev');
 
-const config = merge(resolveConfig, devConfig, {
+const config = merge(devConfig, {
   entry: {
     index: path.resolve(__dirname, '../../src/index')
   },

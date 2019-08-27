@@ -3,10 +3,10 @@ import * as cs from 'classnames';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { BaseReactProps } from '../../../../skeleton';
+import { BaseReactProps } from '../../../../shared';
 
 import * as styles from './index.less';
-import { themeClient } from '@/skeleton/env/theme';
+import { themeClient } from '@/shared/env/theme';
 
 export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
   const { className, basePath } = props;
