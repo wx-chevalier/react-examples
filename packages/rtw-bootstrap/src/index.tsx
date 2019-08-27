@@ -3,7 +3,7 @@ import axios from 'axios';
 import { vendors } from './config/vendors';
 import { init, registerModule, importApp } from './launcher';
 
-declare var isProd: boolean;
+declare const isProd: boolean;
 
 declare global {
   interface Window {

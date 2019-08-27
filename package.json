@@ -52,7 +52,7 @@
     "lint": "yarn workspaces run lint",
     "lint-staged": "lint-staged",
     "prettier-all": "prettier --write 'src/**/*' '!src/{assets,datas}/**'",
-    "start": "./scripts/tools/start_mono.sh",
+    "start": "(cd packages/rtw-host-app && npm start)",
     "start:m-fe": "./scripts/tools/start_micro.sh",
     "test": "yarn workspaces run test",
     "test:watch": "yarn workspaces run test:watch",
