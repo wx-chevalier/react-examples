@@ -4,7 +4,7 @@
   "description": "Micro-Frontend Boilerplate, with React & TS & Webpack",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wx-chevalier/fe-boilerplates"
+    "url": "https://github.com/wx-chevalier/m-fe-rtw"
   },
   "license": "MIT",
   "keywords": [
@@ -15,6 +15,13 @@
     "typescript"
   ],
   "author": "wx-chevalier@github",
+  "private": true,
+  "workspaces": [
+    "packages/rtw-core",
+    "packages/rtw-bootstrap",
+    "packages/rtw-components",
+    "packages/rtw-host-app"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint-staged"
@@ -103,12 +110,5 @@
     "webpack-dev-server": "^3.2.1",
     "webpack-theme-color-replacer": "^1.2.17",
     "workerize-loader": "^1.0.4"
-  },
-  "private": true,
-  "workspaces": [
-    "packages/rtw-core",
-    "packages/rtw-bootstrap",
-    "packages/rtw-components",
-    "packages/rtw-host-app"
-  ]
+  }
 }
