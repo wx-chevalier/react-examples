@@ -14,7 +14,7 @@ import { formatMessage } from '@/i18n';
 
 import './index.less';
 import AuthorizedWrapper from '../auth/AuthorizedWrapper';
-import { RightContent } from '../decorator/GlobalHeader/RightContent';
+import { RightContent } from '../components/GlobalHeader/RightContent';
 
 import logo from '../../assets/logo.svg';
 import { menu } from '../menu';
@@ -44,7 +44,6 @@ const footerRender: BasicLayoutProps['footerRender'] = () => {
   return (
     <div
       style={{
-        padding: '0px 24px 24px',
         textAlign: 'center',
         display: 'flex',
         justifyContent: 'center'
@@ -77,6 +76,7 @@ export const BasicLayout: React.FC<BasicLayoutProps> = props => {
         logo={logo}
         route={menu}
         siderWidth={240}
+        navTheme={'light'}
         menuDataRender={menuDataRender}
         menuItemRender={(menuItemProps, defaultDom) => {
           if (menuItemProps.isUrl) {
