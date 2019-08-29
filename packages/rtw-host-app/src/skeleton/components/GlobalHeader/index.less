@@ -20,6 +20,7 @@
   :global(.anticon) {
     margin-right: 8px;
   }
+
   :global(.ant-dropdown-menu-item) {
     min-width: 160px;
   }
@@ -64,8 +65,14 @@
 
   .search {
     padding: 0 12px;
+
     &:hover {
       background: transparent;
+    }
+
+    :global(.ant-select-combobox .ant-select-search__field__wrap) {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -101,9 +108,11 @@
   :global(.ant-divider-vertical) {
     vertical-align: unset;
   }
+
   .name {
     display: none;
   }
+
   i.trigger {
     padding: 22px 12px;
   }
@@ -112,6 +121,7 @@
     padding-right: 12px;
     padding-left: 12px;
   }
+
   .right {
     position: absolute;
     top: 0;

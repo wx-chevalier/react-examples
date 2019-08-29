@@ -16,6 +16,7 @@ export interface Module {
 }
 
 // menifest 包含了所有页面、模块、应用、控件、插件加载方式的声明，在索引时并不严格区分类型，而推荐按照唯一键索引即可，方便迁移。
+// 自动注册为 `/:id` 的路由
 const _manifest: { [key: string]: Module } = {
   'page-home': {
     type: 'page',

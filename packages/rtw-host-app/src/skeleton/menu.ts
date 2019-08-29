@@ -22,7 +22,8 @@ export const menu: MenuDataItem = {
     {
       icon: 'exception',
       path: '/exception',
-      name: 'Exception'
+      name: 'Exception',
+      authority: ['admin']
     }
   ]
 };

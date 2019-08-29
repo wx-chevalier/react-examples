@@ -81,7 +81,7 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
           }
 
           // 判断是否选中
-          if (matchedPath === menuItemProps.path) {
+          if ((matchedPath || '').startsWith(menuItemProps.path)) {
             return <div className={styles.selectedMenu}>{defaultDom}</div>;
           }
 

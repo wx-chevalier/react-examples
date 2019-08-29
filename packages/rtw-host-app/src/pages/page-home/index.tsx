@@ -1,4 +1,4 @@
-import { Button, message } from 'antd';
+import { Radio, message } from 'antd';
 import * as React from 'react';
 
 import * as styles from './index.less';
@@ -21,19 +21,22 @@ export const Home: React.SFC = () => (
     <div>
       <img src="https://i.postimg.cc/0N7w0mnN/image.png" style={{ width: 800 }} alt="" />
     </div>
-    <Button
-      type="primary"
-      onClick={() => {
-        updateTheme('#13C2C2');
-      }}
-    >
-      点击切换主题
-    </Button>
-    <ThemeColor
-      formatMessage={formatMessage}
-      onChange={color => {
-        updateTheme(color);
-      }}
-    />
+
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ marginTop: 24, marginRight: 16 }}>
+        <h4>点击切换角色：</h4>
+        <Radio.Group onChange={() => {}} defaultValue="user" size="small">
+          <Radio.Button value="user">普通用户</Radio.Button>
+          <Radio.Button value="admin">管理员</Radio.Button>
+        </Radio.Group>
+      </div>
+      <ThemeColor
+        title={'点击切换主题：'}
+        formatMessage={formatMessage}
+        onChange={color => {
+          updateTheme(color);
+        }}
+      />
+    </div>
   </div>
 );
