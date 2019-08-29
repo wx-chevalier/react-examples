@@ -25,8 +25,12 @@ export class App extends React.Component<IAppProps, IAppState> {
   }
 
   renderRoute(appId: string, app: Module) {
+    if (app.component) {
+      return <Route key={appId} path={`/${appId}`} component={app.component} />;
+    }
+
     if (!app.loader || typeof app.loader !== 'function') {
-      throw new Error(`${app.name} loader is not defined or defined wrongly`);
+      throw new Error(`${appId} loader is not defined or defined wrongly`);
     }
 
     return (
@@ -36,7 +40,7 @@ export class App extends React.Component<IAppProps, IAppState> {
         component={() => (
           <AppContainer
             appId={appId}
-            appLoader={app.loader}
+            appLoader={app.loader!}
             onAppendReducer={store.appendReducer}
           />
         )}

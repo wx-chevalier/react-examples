@@ -38,14 +38,18 @@
 
 .right {
   float: right;
+  display: flex;
+  align-items: center;
   height: 100%;
   overflow: hidden;
   .action {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     height: 100%;
     padding: 0 12px;
     cursor: pointer;
     transition: all 0.3s;
+
     > i {
       color: @text-color;
       vertical-align: middle;
@@ -57,12 +61,14 @@
       background: @pro-header-hover-bg;
     }
   }
+
   .search {
     padding: 0 12px;
     &:hover {
       background: transparent;
     }
   }
+
   .account {
     .avatar {
       margin: ~'calc((@{layout-header-height} - 24px) / 2)' 0;

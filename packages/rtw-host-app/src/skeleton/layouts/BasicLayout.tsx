@@ -12,10 +12,12 @@ import { Link } from 'react-router-dom';
 
 import { formatMessage } from '@/i18n';
 
+import './index.less';
 import AuthorizedWrapper from '../auth/AuthorizedWrapper';
 import { RightContent } from '../decorator/GlobalHeader/RightContent';
 
 import logo from '../../assets/logo.svg';
+import { menu } from '../menu';
 
 export interface BasicLayoutProps extends ProLayoutProps {
   breadcrumbNameMap: {
@@ -48,7 +50,7 @@ const footerRender: BasicLayoutProps['footerRender'] = () => {
         justifyContent: 'center'
       }}
     >
-      <h3 style={{ marginRight: 16 }}>王下邀月熊</h3>
+      <h3 style={{ marginRight: 16 }}>王下邀月熊，项目地址：</h3>
       <a href="https://github.com/wx-chevalier/m-fe-rtw">m-fe-rtw</a>
     </div>
   );
@@ -57,19 +59,24 @@ const footerRender: BasicLayoutProps['footerRender'] = () => {
 export const BasicLayout: React.FC<BasicLayoutProps> = props => {
   const { children } = props;
 
+  const [collapse, toggleCollapse] = React.useState(true);
+
   /**
    * init variables
    */
 
   const handleMenuCollapse = (payload: boolean): void => {
-    console.log('global/changeLayoutCollapsed: ' + payload);
+    toggleCollapse(payload);
   };
 
   return (
     <>
       <ProLayout
+        {...props}
+        collapsed={collapse}
         logo={logo}
-        onCollapse={handleMenuCollapse}
+        route={menu}
+        siderWidth={240}
         menuDataRender={menuDataRender}
         menuItemRender={(menuItemProps, defaultDom) => {
           if (menuItemProps.isUrl) {
@@ -90,6 +97,7 @@ export const BasicLayout: React.FC<BasicLayoutProps> = props => {
         ]}
         itemRender={(route, params, routes, paths) => {
           const first = routes.indexOf(route) === 0;
+
           return first ? (
             <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
           ) : (
@@ -99,7 +107,7 @@ export const BasicLayout: React.FC<BasicLayoutProps> = props => {
         footerRender={footerRender}
         formatMessage={formatMessage}
         rightContentRender={rightProps => <RightContent {...rightProps} />}
-        {...props}
+        onCollapse={handleMenuCollapse}
       >
         {children}
       </ProLayout>

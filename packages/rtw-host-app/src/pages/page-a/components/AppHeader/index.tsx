@@ -1,4 +1,3 @@
-import { Button, message } from 'antd';
 import * as cs from 'classnames';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -6,18 +5,9 @@ import { NavLink } from 'react-router-dom';
 import { BaseReactProps } from '../../../../shared';
 
 import * as styles from './index.less';
-import { themeClient } from '@/shared/env/theme';
 
 export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
   const { className, basePath } = props;
-
-  const updateTheme = (newPrimaryColor?: string) => {
-    if (newPrimaryColor) {
-      const timeOut = 0;
-      const hideMessage = message.loading('正在切换主题！', timeOut);
-      themeClient.changeColor(newPrimaryColor).finally(() => hideMessage());
-    }
-  };
 
   return (
     <section>
@@ -41,14 +31,6 @@ export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
           </NavLink>
         </nav>
       </header>
-      <Button
-        type="primary"
-        onClick={() => {
-          updateTheme('#13C2C2');
-        }}
-      >
-        点击切换主题
-      </Button>
     </section>
   );
 };
