@@ -47,7 +47,7 @@ export class ModuleResolver {
   }
 
   /** 替换 URL 中的版本号 */
-  public getURLWithVersion(url: string, version?: string): string {
+  public getUrlWithVersion(url: string, version?: string): string {
     if (version == null) {
       return url;
     }
@@ -56,7 +56,7 @@ export class ModuleResolver {
 
   /** 注册 SystemJS 中的模块 */
   public registerSystemMap(mod: IBasicModule | IAppModule) {
-    const url = this.getURLWithVersion(mod.module, mod.version);
+    const url = this.getUrlWithVersion(mod.module, mod.version);
 
     if (!this.systemConfig.map) {
       this.systemConfig.map = {};
@@ -66,9 +66,9 @@ export class ModuleResolver {
 
     if ('css' in mod && mod.css != null) {
       if (Array.isArray(mod.css)) {
-        this.css.push(...mod.css.map(cssHref => this.getURLWithVersion(cssHref, mod.version)));
+        this.css.push(...mod.css.map(cssHref => this.getUrlWithVersion(cssHref, mod.version)));
       } else {
-        this.css.push(this.getURLWithVersion(mod.css, mod.version));
+        this.css.push(this.getUrlWithVersion(mod.css, mod.version));
       }
     }
   }

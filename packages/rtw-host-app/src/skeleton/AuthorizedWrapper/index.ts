@@ -1,4 +1,4 @@
-import RenderAuthorize from '../Authorized';
+import RenderAuthorize from '../../shared/auth/Authorized';
 import { getAuthority } from './authority';
 
 let Authorized = RenderAuthorize(getAuthority());

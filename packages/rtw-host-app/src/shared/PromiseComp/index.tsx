@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Spin } from 'antd';
 import isEqual from 'lodash/isEqual';
-import { isComponentClass } from './Secured';
+import { isComponentClass } from '../auth/Secured';
 
 interface PromiseRenderProps<T, K> {
   ok: T;
@@ -13,7 +13,7 @@ interface PromiseRenderState {
   component: React.ComponentClass | React.FunctionComponent;
 }
 
-export default class PromiseRender<T, K> extends React.Component<
+export default class PromiseComp<T, K> extends React.Component<
   PromiseRenderProps<T, K>,
   PromiseRenderState
 > {

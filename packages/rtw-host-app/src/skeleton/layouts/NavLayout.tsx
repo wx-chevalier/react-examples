@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import { formatMessage } from '@/i18n';
 
 import * as styles from './index.less';
-import AuthorizedWrapper from '../auth/AuthorizedWrapper';
+import AuthorizedWrapper from '../AuthorizedWrapper';
 import { RightContent } from '../components/GlobalHeader/RightContent';
 
 import logo from '../../assets/logo.svg';
@@ -82,7 +82,11 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
 
           // 判断是否选中
           if ((matchedPath || '').startsWith(menuItemProps.path)) {
-            return <div className={styles.selectedMenu}>{defaultDom}</div>;
+            return (
+              <div className={collapse ? styles.selectedMenuCollapsed : styles.selectedMenu}>
+                {defaultDom}
+              </div>
+            );
           }
 
           return <Link to={menuItemProps.path}>{defaultDom}</Link>;
@@ -91,7 +95,7 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
           return (
             <span>
               <span>{defaultRenderCollapsedButton(_collapsed)}</span>
-              <span style={{ marginLeft: 8 }}>Custom App Breadcrumb Nav</span>
+              <span style={{ marginLeft: 8, fontSize: 16 }}>Custom App Breadcrumb Nav</span>
             </span>
           );
         }}

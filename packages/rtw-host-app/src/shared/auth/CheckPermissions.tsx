@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { CURRENT } from './renderAuthorize';
 
-import PromiseRender from './PromiseRender';
+import PromiseComp from '../PromiseComp';
 
 export type IAuthorityType =
   | undefined
@@ -54,7 +54,7 @@ const checkPermissions = <T, K>(
   }
   // Promise 处理
   if (authority instanceof Promise) {
-    return <PromiseRender<T, K> ok={target} error={Exception} promise={authority} />;
+    return <PromiseComp<T, K> ok={target} error={Exception} promise={authority} />;
   }
   // Function 处理
   if (typeof authority === 'function') {
@@ -62,7 +62,7 @@ const checkPermissions = <T, K>(
       const bool = authority(currentAuthority);
       // 函数执行后返回值是 Promise
       if (bool instanceof Promise) {
-        return <PromiseRender<T, K> ok={target} error={Exception} promise={bool} />;
+        return <PromiseComp<T, K> ok={target} error={Exception} promise={bool} />;
       }
       if (bool) {
         return target;

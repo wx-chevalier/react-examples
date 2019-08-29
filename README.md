@@ -40,21 +40,23 @@ $ cd .. & npm start
 
 ## Features
 
-- 非 APP 类可单独发布，APP 类可单独运行，与发布。发布版本可包含 ES, CJS, UMD 等，dist 目录下包含 ES/CJS 模块，build 目录下包含 APP 完整资源以及 UMD 模块。
-
-- 版本控制: 子应用资源不使用 Hash 方式，而是使用语义化版本，`/[cdnHost]/[projectName]/[subAppName]/[x.y.z]/index.{js,css}`。
-
-- 样式，LESS 文件支持 CSS Modules，CSS/SCSS 使用标准 CSS。
-
 - 状态管理，灵活支持 Redux/MobX/Dva 等不同的状态管理框架，对于 Redux 提供全局统一的 Store 声明。
 
-- 应用编排：版本控制、应用注册、应用路由
+- 模块分割，非 APP 类可单独发布，APP 类可单独运行，与发布。发布版本可包含 ES, CJS, UMD 等，dist 目录下包含 ES/CJS 模块，build 目录下包含 APP 完整资源以及 UMD 模块。
 
-- 动态主题与样式切换
+- 应用编排：版本控制、应用注册、应用路由，子应用资源不使用 Hash 方式，而是使用语义化版本，`/[cdnHost]/[projectName]/[subAppName]/[x.y.z]/index.{js,css}`。
+
+- 动态主题与样式切换，- 样式，LESS 文件支持 CSS Modules，CSS/SCSS 使用标准 CSS。
 
 - 权限控制
 
 - 路由与导航框架
+
+- 国际化
+
+- PWA
+
+- 服务端渲染
 
 ## Structure | 项目结构
 
