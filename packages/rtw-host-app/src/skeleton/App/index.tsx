@@ -9,7 +9,7 @@ import * as styles from './index.less';
 import { manifest, Module } from '../manifest';
 import AppContainer from '../../shared/AppContainer';
 import store from '../../store/redux/store';
-import { BasicLayout } from '../layouts/BasicLayout';
+import { NavLayout } from '../layouts/NavLayout';
 import { Exception404 } from '../components/exception/404';
 
 export interface IAppProps extends RouteComponentProps {}
@@ -48,11 +48,12 @@ export class App extends React.Component<IAppProps, IAppState> {
   }
 
   render() {
+    const { location } = this.props;
     const routes = Object.keys(manifest);
 
     return (
       <section className={styles.container}>
-        <BasicLayout breadcrumbNameMap={{}}>
+        <NavLayout matchedPath={location.pathname}>
           <Switch>
             <Route exact={true} path="/">
               <Redirect to={routes[0]} />
@@ -60,7 +61,7 @@ export class App extends React.Component<IAppProps, IAppState> {
             {routes.map(r => this.renderRoute(r, manifest[r]))}
             <Route component={() => <Exception404 />} />
           </Switch>
-        </BasicLayout>
+        </NavLayout>
       </section>
     );
   }

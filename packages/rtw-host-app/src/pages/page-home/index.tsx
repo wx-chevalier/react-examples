@@ -19,7 +19,7 @@ const updateTheme = (newPrimaryColor?: string) => {
 export const Home: React.SFC = () => (
   <div className={styles.container}>
     <div>
-      <img src="https://i.postimg.cc/0N7w0mnN/image.png" style={{ width: 600 }} alt="" />
+      <img src="https://i.postimg.cc/0N7w0mnN/image.png" style={{ width: 800 }} alt="" />
     </div>
     <Button
       type="primary"

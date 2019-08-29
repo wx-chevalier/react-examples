@@ -12,24 +12,17 @@ import { Link } from 'react-router-dom';
 
 import { formatMessage } from '@/i18n';
 
-import './index.less';
+import * as styles from './index.less';
 import AuthorizedWrapper from '../auth/AuthorizedWrapper';
 import { RightContent } from '../components/GlobalHeader/RightContent';
 
 import logo from '../../assets/logo.svg';
 import { menu } from '../menu';
+import { Icon } from 'antd';
 
-export interface BasicLayoutProps extends ProLayoutProps {
-  breadcrumbNameMap: {
-    [path: string]: MenuDataItem;
-  };
+export interface NavLayoutProps extends ProLayoutProps {
+  matchedPath?: string;
 }
-
-export type BasicLayoutContext = { [K in 'location']: BasicLayoutProps[K] } & {
-  breadcrumbNameMap: {
-    [path: string]: MenuDataItem;
-  };
-};
 
 /**
  * use AuthorizedWrapper check all menu item
@@ -40,7 +33,11 @@ const menuDataRender = (menuList: MenuDataItem[]): MenuDataItem[] =>
     return AuthorizedWrapper.check(item.authority, localItem, null) as MenuDataItem;
   });
 
-const footerRender: BasicLayoutProps['footerRender'] = () => {
+const defaultRenderCollapsedButton = (collapsed?: boolean) => (
+  <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
+);
+
+const footerRender: NavLayoutProps['footerRender'] = () => {
   return (
     <div
       style={{
@@ -55,8 +52,8 @@ const footerRender: BasicLayoutProps['footerRender'] = () => {
   );
 };
 
-export const BasicLayout: React.FC<BasicLayoutProps> = props => {
-  const { children } = props;
+export const NavLayout: React.FC<NavLayoutProps> = props => {
+  const { children, matchedPath } = props;
 
   const [collapse, toggleCollapse] = React.useState(true);
 
@@ -69,7 +66,7 @@ export const BasicLayout: React.FC<BasicLayoutProps> = props => {
   };
 
   return (
-    <>
+    <section>
       <ProLayout
         {...props}
         collapsed={collapse}
@@ -83,19 +80,35 @@ export const BasicLayout: React.FC<BasicLayoutProps> = props => {
             return defaultDom;
           }
 
+          // 判断是否选中
+          if (matchedPath === menuItemProps.path) {
+            return <div className={styles.selectedMenu}>{defaultDom}</div>;
+          }
+
           return <Link to={menuItemProps.path}>{defaultDom}</Link>;
         }}
-        breadcrumbRender={(routers = []) => [
-          {
-            path: '/',
-            breadcrumbName: formatMessage({
-              id: 'menu.home',
-              defaultMessage: 'Home'
-            })
-          },
-          ...routers
-        ]}
+        collapsedButtonRender={_collapsed => {
+          return (
+            <span>
+              <span>{defaultRenderCollapsedButton(_collapsed)}</span>
+              <span style={{ marginLeft: 8 }}>Custom App Breadcrumb Nav</span>
+            </span>
+          );
+        }}
+        breadcrumbRender={(routers = []) => {
+          return [
+            {
+              path: '/',
+              breadcrumbName: formatMessage({
+                id: 'menu.home',
+                defaultMessage: 'Home'
+              })
+            },
+            ...routers
+          ];
+        }}
         itemRender={(route, params, routes, paths) => {
+          console.log('A');
           const first = routes.indexOf(route) === 0;
 
           return first ? (
@@ -111,6 +124,6 @@ export const BasicLayout: React.FC<BasicLayoutProps> = props => {
       >
         {children}
       </ProLayout>
-    </>
+    </section>
   );
 };
