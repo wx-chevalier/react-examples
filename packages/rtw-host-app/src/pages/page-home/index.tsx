@@ -7,6 +7,7 @@ import { themeClient } from '@/shared/env/theme';
 
 import { ThemeColor } from './components/ThemeColor';
 import { formatMessage } from '../../i18n/index';
+import { NavContext } from '../../skeleton/layouts/NavContext';
 
 const updateTheme = (newPrimaryColor?: string) => {
   if (newPrimaryColor) {
@@ -16,27 +17,37 @@ const updateTheme = (newPrimaryColor?: string) => {
   }
 };
 
-export const Home: React.SFC = () => (
-  <div className={styles.container}>
-    <div>
-      <img src="https://i.postimg.cc/0N7w0mnN/image.png" style={{ width: 800 }} alt="" />
-    </div>
+export const Home: React.SFC = () => {
+  const navContext = React.useContext(NavContext);
 
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ marginTop: 24, marginRight: 16 }}>
-        <h4>点击切换角色：</h4>
-        <Radio.Group onChange={() => {}} defaultValue="user" size="small">
-          <Radio.Button value="user">普通用户</Radio.Button>
-          <Radio.Button value="admin">管理员</Radio.Button>
-        </Radio.Group>
+  return (
+    <div className={styles.container}>
+      <div>
+        <img src="https://i.postimg.cc/0N7w0mnN/image.png" style={{ width: 800 }} alt="" />
       </div>
-      <ThemeColor
-        title={'点击切换主题：'}
-        formatMessage={formatMessage}
-        onChange={color => {
-          updateTheme(color);
-        }}
-      />
+
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ marginTop: 24, marginRight: 16 }}>
+          <h4>点击切换角色：</h4>
+          <Radio.Group
+            onChange={e => {
+              navContext.onAuthorityChange!([e.target.value]);
+            }}
+            value={navContext.authority![0]}
+            size="small"
+          >
+            <Radio.Button value="user">普通用户</Radio.Button>
+            <Radio.Button value="admin">管理员</Radio.Button>
+          </Radio.Group>
+        </div>
+        <ThemeColor
+          title={'点击切换主题：'}
+          formatMessage={formatMessage}
+          onChange={color => {
+            updateTheme(color);
+          }}
+        />
+      </div>
     </div>
-  </div>
-);
+  );
+};

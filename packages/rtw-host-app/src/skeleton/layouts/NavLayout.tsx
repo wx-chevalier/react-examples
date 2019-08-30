@@ -1,8 +1,4 @@
-/**
- * Ant Design Pro v4 use `@ant-design/pro-layout` to handle Layout.
- * You can view component api by:
- * https://github.com/ant-design/ant-design-pro-layout
- */
+import { Icon } from 'antd';
 import ProLayout, {
   MenuDataItem,
   BasicLayoutProps as ProLayoutProps
@@ -11,14 +7,16 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import { formatMessage } from '@/i18n';
+import { checkPermissions } from '@/shared/auth';
 
 import * as styles from './index.less';
-import AuthorizedWrapper from '../AuthorizedWrapper';
+
 import { RightContent } from '../components/GlobalHeader/RightContent';
 
 import logo from '../../assets/logo.svg';
 import { menu } from '../menu';
-import { Icon } from 'antd';
+import { NavContext } from './NavContext';
+import { setAuthority, getAuthority } from '../../shared/auth/authority';
 
 export interface NavLayoutProps extends ProLayoutProps {
   matchedPath?: string;
@@ -30,7 +28,7 @@ export interface NavLayoutProps extends ProLayoutProps {
 const menuDataRender = (menuList: MenuDataItem[]): MenuDataItem[] =>
   menuList.map(item => {
     const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] };
-    return AuthorizedWrapper.check(item.authority, localItem, null) as MenuDataItem;
+    return checkPermissions(item.authority, localItem, null) as MenuDataItem;
   });
 
 const defaultRenderCollapsedButton = (collapsed?: boolean) => (
@@ -54,6 +52,7 @@ const footerRender: NavLayoutProps['footerRender'] = () => {
 
 export const NavLayout: React.FC<NavLayoutProps> = props => {
   const { children, matchedPath } = props;
+  const [authority, _setAuthority] = React.useState(getAuthority());
 
   const [collapse, toggleCollapse] = React.useState(true);
 
@@ -67,67 +66,77 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
 
   return (
     <section>
-      <ProLayout
-        {...props}
-        collapsed={collapse}
-        logo={logo}
-        route={menu}
-        siderWidth={240}
-        navTheme={'light'}
-        menuDataRender={menuDataRender}
-        menuItemRender={(menuItemProps, defaultDom) => {
-          if (menuItemProps.isUrl) {
-            return defaultDom;
+      <NavContext.Provider
+        value={{
+          authority: authority,
+          onAuthorityChange: (a: string[]) => {
+            setAuthority(a);
+            _setAuthority(a);
           }
-
-          // 判断是否选中
-          if ((matchedPath || '').startsWith(menuItemProps.path)) {
-            return (
-              <div className={collapse ? styles.selectedMenuCollapsed : styles.selectedMenu}>
-                {defaultDom}
-              </div>
-            );
-          }
-
-          return <Link to={menuItemProps.path}>{defaultDom}</Link>;
         }}
-        collapsedButtonRender={_collapsed => {
-          return (
-            <span>
-              <span>{defaultRenderCollapsedButton(_collapsed)}</span>
-              <span style={{ marginLeft: 8, fontSize: 16 }}>Custom App Breadcrumb Nav</span>
-            </span>
-          );
-        }}
-        breadcrumbRender={(routers = []) => {
-          return [
-            {
-              path: '/',
-              breadcrumbName: formatMessage({
-                id: 'menu.home',
-                defaultMessage: 'Home'
-              })
-            },
-            ...routers
-          ];
-        }}
-        itemRender={(route, params, routes, paths) => {
-          console.log('A');
-          const first = routes.indexOf(route) === 0;
-
-          return first ? (
-            <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
-          ) : (
-            <span>{route.breadcrumbName}</span>
-          );
-        }}
-        footerRender={footerRender}
-        formatMessage={formatMessage}
-        rightContentRender={rightProps => <RightContent {...rightProps} />}
-        onCollapse={handleMenuCollapse}
       >
-        {children}
-      </ProLayout>
+        <ProLayout
+          {...props}
+          collapsed={collapse}
+          logo={logo}
+          route={menu}
+          siderWidth={240}
+          navTheme={'light'}
+          menuDataRender={menuDataRender}
+          menuItemRender={(menuItemProps, defaultDom) => {
+            if (menuItemProps.isUrl) {
+              return defaultDom;
+            }
+
+            // 判断是否选中
+            if ((matchedPath || '').startsWith(menuItemProps.path)) {
+              return (
+                <div className={collapse ? styles.selectedMenuCollapsed : styles.selectedMenu}>
+                  {defaultDom}
+                </div>
+              );
+            }
+
+            return <Link to={menuItemProps.path}>{defaultDom}</Link>;
+          }}
+          collapsedButtonRender={_collapsed => {
+            return (
+              <span>
+                <span>{defaultRenderCollapsedButton(_collapsed)}</span>
+                <span style={{ marginLeft: 8, fontSize: 16 }}>Custom App Breadcrumb Nav</span>
+              </span>
+            );
+          }}
+          breadcrumbRender={(routers = []) => {
+            return [
+              {
+                path: '/',
+                breadcrumbName: formatMessage({
+                  id: 'menu.home',
+                  defaultMessage: 'Home'
+                })
+              },
+              ...routers
+            ];
+          }}
+          itemRender={(route, params, routes, paths) => {
+            console.log('A');
+            const first = routes.indexOf(route) === 0;
+
+            return first ? (
+              <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
+            ) : (
+              <span>{route.breadcrumbName}</span>
+            );
+          }}
+          footerRender={footerRender}
+          formatMessage={formatMessage}
+          rightContentRender={rightProps => <RightContent {...rightProps} />}
+          onCollapse={handleMenuCollapse}
+        >
+          {children}
+        </ProLayout>
+      </NavContext.Provider>
     </section>
   );
 };

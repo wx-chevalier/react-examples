@@ -14,7 +14,7 @@ export interface GlobalHeaderRightProps {
   menu?: boolean;
 }
 
-export class AvatarDropdown extends React.Component<GlobalHeaderRightProps> {
+export class UserDropdown extends React.Component<GlobalHeaderRightProps> {
   onMenuClick = (event: ClickParam) => {
     const { key } = event;
 
@@ -22,7 +22,7 @@ export class AvatarDropdown extends React.Component<GlobalHeaderRightProps> {
       console.log('logout');
       return;
     }
-    history.push(`/account/${key}`);
+    history.push(`/`);
   };
 
   render(): React.ReactNode {

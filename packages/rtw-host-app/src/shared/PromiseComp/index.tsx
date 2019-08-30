@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Spin } from 'antd';
 import isEqual from 'lodash/isEqual';
-import { isComponentClass } from '../auth/Secured';
+import { isComponentClass } from '../types/comp';
 
 interface PromiseRenderProps<T, K> {
   ok: T;

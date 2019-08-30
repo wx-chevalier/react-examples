@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Redirect, Route } from 'react-router';
 
-import Authorized from './Authorized';
-import { IAuthorityType } from './CheckPermissions';
+import { Authorized } from './Authorized';
+import { IAuthorityType } from './permissions';
 
 interface AuthorizedRoutePops {
   currentAuthority: string;
@@ -12,7 +12,7 @@ interface AuthorizedRoutePops {
   authority: IAuthorityType;
 }
 
-const AuthorizedRoute: React.SFC<AuthorizedRoutePops> = ({
+export const AuthorizedRoute: React.SFC<AuthorizedRoutePops> = ({
   component: Component,
   render,
   authority,
@@ -29,5 +29,3 @@ const AuthorizedRoute: React.SFC<AuthorizedRoutePops> = ({
     />
   </Authorized>
 );
-
-export default AuthorizedRoute;

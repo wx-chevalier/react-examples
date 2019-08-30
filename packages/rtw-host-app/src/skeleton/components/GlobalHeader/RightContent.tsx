@@ -2,11 +2,12 @@ import { Icon, Tooltip } from 'antd';
 import * as React from 'react';
 import { formatMessage } from '@/i18n';
 
-import { AvatarDropdown as Avatar } from './AvatarDropdown';
+import { UserDropdown as User } from './UserDropdown';
 import HeaderSearch from '../HeaderSearch';
 import SelectLang from '../SelectLang';
 import styles from './index.less';
 import { NoticeIconView } from './NoticeIconView';
+import { NavContext } from '../../layouts/NavContext';
 
 export type SiderTheme = 'light' | 'dark';
 export interface RightContentProps {
@@ -21,6 +22,8 @@ export const RightContent: React.SFC<RightContentProps> = props => {
   if (theme === 'dark' && layout === 'topmenu') {
     className = `${styles.right}  ${styles.dark}`;
   }
+
+  const navContext = React.useContext(NavContext);
 
   return (
     <div className={className}>
@@ -62,7 +65,10 @@ export const RightContent: React.SFC<RightContentProps> = props => {
         </a>
       </Tooltip>
       <NoticeIconView />
-      <Avatar menu />
+      <User
+        menu
+        currentUser={{ name: navContext.authority![0], avatar: 'https://i.pravatar.cc/300' }}
+      />
       <SelectLang className={styles.action} />
     </div>
   );
