@@ -7,7 +7,7 @@ import * as smoothscroll from 'smoothscroll-polyfill';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 import App from './skeleton/App';
-import store from './store/redux/store';
+import store from './skeleton/store/redux/store';
 import { history } from './shared/env/history';
 
 export let importApp: Function | null = null;
