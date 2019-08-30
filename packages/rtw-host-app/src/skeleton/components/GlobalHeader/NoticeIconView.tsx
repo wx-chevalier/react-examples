@@ -31,7 +31,12 @@ export class NoticeIconView extends Component<NoticeIconViewProps> {
   };
 
   handleNoticeClear = (title: string, key: string) => {
-    message.success(`${formatMessage({ id: 'component.noticeIcon.cleared' })} ${title}`);
+    message.success(
+      `${formatMessage({
+        id: 'component.noticeIcon.cleared',
+        defaultMessage: '清空完毕'
+      })} ${title}`
+    );
 
     console.log('global/clearNotices');
   };
@@ -94,8 +99,11 @@ export class NoticeIconView extends Component<NoticeIconViewProps> {
           this.changeReadState(item as NoticeItem);
         }}
         loading={fetchingNotices}
-        clearText={formatMessage({ id: 'component.noticeIcon.clear' })}
-        viewMoreText={formatMessage({ id: 'component.noticeIcon.view-more' })}
+        clearText={formatMessage({ id: 'component.noticeIcon.clear', defaultMessage: '清空' })}
+        viewMoreText={formatMessage({
+          id: 'component.noticeIcon.view-more',
+          defaultMessage: '更多'
+        })}
         onClear={this.handleNoticeClear}
         onPopupVisibleChange={onNoticeVisibleChange}
         onViewMore={() => message.info('Click on view more')}
@@ -105,22 +113,34 @@ export class NoticeIconView extends Component<NoticeIconViewProps> {
           tabKey="notification"
           count={unreadMsg.notification}
           list={noticeData.notification}
-          title={formatMessage({ id: 'component.globalHeader.notification' })}
-          emptyText={formatMessage({ id: 'component.globalHeader.notification.empty' })}
+          title={formatMessage({
+            id: 'component.globalHeader.notification',
+            defaultMessage: '通知'
+          })}
+          emptyText={formatMessage({
+            id: 'component.globalHeader.notification.empty',
+            defaultMessage: '暂无通知'
+          })}
           showViewMore
         />
         <NoticeIcon.Tab
           tabKey="message"
           count={unreadMsg.message}
           list={noticeData.message}
-          title={formatMessage({ id: 'component.globalHeader.message' })}
-          emptyText={formatMessage({ id: 'component.globalHeader.message.empty' })}
+          title={formatMessage({ id: 'component.globalHeader.message', defaultMessage: '评论' })}
+          emptyText={formatMessage({
+            id: 'component.globalHeader.message.empty',
+            defaultMessage: '暂无评论'
+          })}
           showViewMore
         />
         <NoticeIcon.Tab
           tabKey="event"
-          title={formatMessage({ id: 'component.globalHeader.event' })}
-          emptyText={formatMessage({ id: 'component.globalHeader.event.empty' })}
+          title={formatMessage({ id: 'component.globalHeader.event', defaultMessage: '事件' })}
+          emptyText={formatMessage({
+            id: 'component.globalHeader.event.empty',
+            defaultMessage: '暂无事件'
+          })}
           count={unreadMsg.event}
           list={noticeData.event}
           showViewMore
