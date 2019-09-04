@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import * as styles from './index.less';
 import { manifest, Module } from '../../manifest';
 import AppContainer from '../AppContainer';
-import store from '../../../store';
+import store from '../../../store/store';
 import { NavLayout } from '../../layouts/NavLayout';
 import { Exception404 } from '../../components/exception/404';
 

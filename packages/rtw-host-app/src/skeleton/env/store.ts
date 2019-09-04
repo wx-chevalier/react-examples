@@ -3,8 +3,8 @@ import { applyMiddleware, createStore, compose, ReducersMapObject } from 'redux'
 import { middleware as reduxPackMiddleware } from 'redux-pack-fsa';
 import thunkMiddleware from 'redux-thunk';
 
-import { configReducer } from './ducks';
-import { history } from '../skeleton/env/history';
+import { configReducer } from '../../ducks';
+import { history } from './history';
 
 declare let isProd: boolean;
 declare global {

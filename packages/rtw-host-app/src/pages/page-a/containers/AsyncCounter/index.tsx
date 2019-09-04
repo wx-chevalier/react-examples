@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { commonActions } from '@/store/ducks/common';
-import { IState } from '@/store/ducks';
+import { commonActions } from '@/ducks/common';
+import { IState } from '@/ducks';
 import { Button } from 'antd';
 
 export class AsyncCounterComp extends Component<any> {

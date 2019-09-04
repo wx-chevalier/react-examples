@@ -10,7 +10,7 @@ import * as smoothscroll from 'smoothscroll-polyfill';
 import 'antd/dist/antd.less'; // 引入官方提供的 less 样式入口文件
 
 import App from './skeleton/containers/App';
-import store from './store';
+import store from './store/store';
 import { history } from './skeleton/env/history';
 
 smoothscroll.polyfill();
