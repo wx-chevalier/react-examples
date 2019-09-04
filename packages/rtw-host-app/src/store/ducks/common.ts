@@ -1,6 +1,6 @@
 import { createActions, handleActions } from 'redux-actions';
 
-interface IState {
+export interface IState {
   count: number;
 }
 
@@ -18,13 +18,16 @@ export const actions = createActions({
   }
 });
 
+export const commonActions = actions;
+
 export default handleActions<IState, any>(
   {
     [actions.incr.toString()](state: IState, { error, payload }) {
+      console.log(state.count + payload);
       return { ...state, count: state.count + payload, error };
     },
 
-    [actions.error.toString()](state: IState, { error, payload }) {
+    [actions.error.toString()](state: IState, { error }) {
       return { ...state, error };
     }
   },

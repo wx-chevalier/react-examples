@@ -2,7 +2,11 @@ import { connectRouter } from 'connected-react-router';
 import { combineReducers, ReducersMapObject } from 'redux';
 import { History } from 'history';
 
-import commonReducer from './common';
+import commonReducer, { IState as CommonState } from './common';
+
+export interface IState {
+  common: CommonState;
+}
 
 export const configReducer = (partialReducers: ReducersMapObject = {}) => (history: History) =>
   combineReducers({

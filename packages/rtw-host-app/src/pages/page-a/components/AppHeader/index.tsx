@@ -23,7 +23,7 @@ export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
           </NavLink>
           <NavLink
             exact
-            to={`${basePath}/redux-count`}
+            to={`${basePath}/async-count`}
             className={styles.link}
             activeClassName={styles.active}
           >
