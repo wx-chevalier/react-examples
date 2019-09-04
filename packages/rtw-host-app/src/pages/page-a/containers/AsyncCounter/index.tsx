@@ -7,20 +7,42 @@ import { Button } from 'antd';
 
 export class AsyncCounterComp extends Component<any> {
   render() {
-    const { count, incr } = this.props;
+    const { count, incr, dec, error } = this.props;
     return (
       <div>
-        <h1>基于 Promise 的异步计数器</h1>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <span>基于 Promise 的异步计数器：</span>
+          <span>{count}</span>
+        </div>
 
-        <div>{count}</div>
-
-        <Button
-          onClick={() => {
-            incr();
-          }}
+        <div
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 24 }}
         >
-          + 1
-        </Button>
+          <Button
+            style={{ marginRight: 16 }}
+            onClick={() => {
+              incr();
+            }}
+          >
+            + 1
+          </Button>
+          <Button
+            onClick={() => {
+              dec();
+            }}
+          >
+            - 1
+          </Button>
+          <Button
+            type="danger"
+            style={{ marginRight: 16 }}
+            onClick={() => {
+              error();
+            }}
+          >
+            Throw Error
+          </Button>
+        </div>
       </div>
     );
   }

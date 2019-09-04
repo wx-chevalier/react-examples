@@ -80,6 +80,7 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
           collapsed={collapse}
           logo={logo}
           route={menu}
+          title="RTW"
           siderWidth={240}
           navTheme={'light'}
           menuDataRender={menuDataRender}

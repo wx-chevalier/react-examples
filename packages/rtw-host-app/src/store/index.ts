@@ -1,6 +1,6 @@
 import { routerMiddleware } from 'connected-react-router';
 import { applyMiddleware, createStore, compose, ReducersMapObject } from 'redux';
-import promiseMiddleware from 'redux-promise-middleware';
+import { middleware as reduxPackMiddleware } from 'redux-pack-fsa';
 import thunkMiddleware from 'redux-thunk';
 
 import { configReducer } from './ducks';
@@ -13,7 +13,11 @@ declare global {
   }
 }
 
-const middlewares = applyMiddleware(routerMiddleware(history), promiseMiddleware, thunkMiddleware);
+const middlewares = applyMiddleware(
+  routerMiddleware(history),
+  thunkMiddleware,
+  reduxPackMiddleware
+);
 
 let enhancers = middlewares;
 

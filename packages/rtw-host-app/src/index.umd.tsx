@@ -7,7 +7,7 @@ import * as smoothscroll from 'smoothscroll-polyfill';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 import App from './skeleton/containers/App';
-import store from './store/store';
+import store from './store';
 import { history } from './skeleton/env/history';
 
 export let importApp: Function | null = null;
