@@ -7,7 +7,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import { formatMessage } from '@/i18n';
-import { checkPermissions } from '@/shared/auth';
+import { checkPermissions } from '@/skeleton/auth';
+import { setAuthority, getAuthority } from '@/skeleton/auth/authority';
 
 import * as styles from './index.less';
 
@@ -16,7 +17,6 @@ import { RightContent } from '../components/GlobalHeader/RightContent';
 import logo from '../../assets/logo.svg';
 import { menu } from '../menu';
 import { NavContext } from './NavContext';
-import { setAuthority, getAuthority } from '../../shared/auth/authority';
 
 export interface NavLayoutProps extends ProLayoutProps {
   matchedPath?: string;

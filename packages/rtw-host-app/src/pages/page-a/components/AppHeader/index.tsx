@@ -2,7 +2,7 @@ import * as cs from 'classnames';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { BaseReactProps } from '../../../../shared';
+import { BaseReactProps } from '@/skeleton/types';
 
 import * as styles from './index.less';
 
@@ -19,7 +19,15 @@ export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
             className={styles.link}
             activeClassName={styles.active}
           >
-            Count
+            Hooks Count
+          </NavLink>
+          <NavLink
+            exact
+            to={`${basePath}/redux-count`}
+            className={styles.link}
+            activeClassName={styles.active}
+          >
+            Async Count（Redux）
           </NavLink>
           <NavLink
             exact

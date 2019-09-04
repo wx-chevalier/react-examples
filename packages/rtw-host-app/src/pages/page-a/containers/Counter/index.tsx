@@ -1,7 +1,7 @@
 import * as cs from 'classnames';
 import * as React from 'react';
 
-import { BaseReactProps } from '@/shared/types/props';
+import { BaseReactProps } from '@/skeleton/types/props';
 
 import { ExampleModal } from '../../components/ExampleModal';
 

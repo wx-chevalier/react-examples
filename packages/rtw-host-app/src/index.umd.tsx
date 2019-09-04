@@ -6,9 +6,9 @@ import * as ReactDOM from 'react-dom';
 import * as smoothscroll from 'smoothscroll-polyfill';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
-import App from './skeleton/App';
-import store from './skeleton/store/redux/store';
-import { history } from './shared/env/history';
+import App from './skeleton/containers/App';
+import store from './store/store';
+import { history } from './skeleton/env/history';
 
 export let importApp: Function | null = null;
 

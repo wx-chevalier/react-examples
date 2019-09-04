@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import * as styles from './index.less';
 
-import { themeClient } from '@/shared/env/theme';
+import { themeClient } from '@/skeleton/env/theme';
 
 import { ThemeColor } from './components/ThemeColor';
 import { formatMessage } from '../../i18n/index';

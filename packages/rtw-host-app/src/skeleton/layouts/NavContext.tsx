@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { IAuthorityType } from '../../shared/auth/permissions';
+import { IAuthorityType } from '@/skeleton/auth/permissions';
 
 export interface NavContextProps {
   authority?: IAuthorityType;

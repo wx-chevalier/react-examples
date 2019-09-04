@@ -3,7 +3,7 @@ import { ClickParam } from 'antd/es/menu';
 import { FormattedMessage } from 'react-intl';
 import * as React from 'react';
 
-import { history } from '@/shared/env/history';
+import { history } from '@/skeleton/env/history';
 import { CurrentUser } from '@/models/UserModel';
 
 import HeaderDropdown from '../HeaderDropdown';

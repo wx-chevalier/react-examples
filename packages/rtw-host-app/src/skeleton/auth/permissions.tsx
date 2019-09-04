@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PromiseComp from '../PromiseComp';
+import PromiseComp from '../../skeleton/containers/PromiseComp';
 import { getAuthority } from './authority';
 
 export type IAuthorityType =

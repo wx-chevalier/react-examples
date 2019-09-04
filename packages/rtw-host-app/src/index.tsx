@@ -7,9 +7,11 @@ import * as ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import * as smoothscroll from 'smoothscroll-polyfill';
 
-import App from './skeleton/App';
-import store from './skeleton/store/redux/store';
-import { history } from './shared/env/history';
+import 'antd/dist/antd.less'; // 引入官方提供的 less 样式入口文件
+
+import App from './skeleton/containers/App';
+import store from './store/store';
+import { history } from './skeleton/env/history';
 
 smoothscroll.polyfill();
 
