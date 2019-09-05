@@ -14,7 +14,7 @@ import * as styles from './index.less';
 
 import { RightContent } from '../components/GlobalHeader/RightContent';
 
-import logo from '../../assets/logo.svg';
+import Logo from '../../assets/logo.svg';
 import { menu } from '../menu';
 import { NavContext } from './NavContext';
 
@@ -78,7 +78,7 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
         <ProLayout
           {...props}
           collapsed={collapse}
-          logo={logo}
+          logo={<Logo style={{ transform: 'scale(0.2)' }} />}
           route={menu}
           title="RTW"
           siderWidth={240}

@@ -63,6 +63,7 @@
     "umi-request": "^1.2.3"
   },
   "devDependencies": {
+    "@svgr/webpack": "^4.3.2",
     "@types/classnames": "^2.2.9",
     "@types/enzyme": "^3.10.3",
     "@types/jest": "24.0.18",
