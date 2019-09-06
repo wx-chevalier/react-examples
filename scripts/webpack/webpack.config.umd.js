@@ -19,10 +19,10 @@ const umdConfig = {
     libraryTarget: 'umd'
   },
   externals: {
-    'rtw-core': {
-      commonjs: 'rtw-core',
-      commonjs2: 'rtw-core',
-      amd: 'rtw-core',
+    'fc-sg-core': {
+      commonjs: 'fc-sg-core',
+      commonjs2: 'fc-sg-core',
+      amd: 'fc-sg-core',
       root: 'rtwCore'
     },
     antd: 'antd',
