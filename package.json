@@ -1,10 +1,10 @@
 {
-  "name": "fc-sg-workspace",
+  "name": "m-fe-rtw",
   "version": "0.0.1",
-  "description": "A React Schedule component with virtual rendering",
+  "description": "Micro-Frontend Boilerplate, with React & TS & Webpack",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wx-chevalier/fractch-components"
+    "url": "https://github.com/wx-chevalier/m-fe-rtw"
   },
   "license": "MIT",
   "keywords": [
@@ -17,8 +17,10 @@
   "author": "wx-chevalier@github",
   "private": true,
   "workspaces": [
-    "packages/fc-sg-core",
-    "packages/fc-sg-react"
+    "packages/rtw-core",
+    "packages/rtw-bootstrap",
+    "packages/rtw-components",
+    "packages/rtw-host-app"
   ],
   "husky": {
     "hooks": {
@@ -50,7 +52,7 @@
     "lint": "yarn workspaces run lint",
     "lint-staged": "lint-staged",
     "prettier-all": "prettier --write 'src/**/*' '!src/{assets,datas}/**'",
-    "start": "(cd packages/fc-sg-react && npm start)",
+    "start": "(cd packages/rtw-host-app && npm start)",
     "start:m-fe": "./scripts/tools/start_micro.sh",
     "test": "yarn workspaces run test",
     "test:watch": "yarn workspaces run test:watch",

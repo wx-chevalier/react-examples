@@ -1,0 +1,74 @@
+@import 'skeleton/styles/variables.less';
+
+@btnHeight: 50px;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  background-color: @white;
+  border-radius: @borderRadiusLarge;
+  box-shadow: @shadowModal;
+
+  width: 330px;
+}
+
+.header {
+  color: @primaryColor;
+  border-bottom: 1px solid @borderColor;
+  padding: 12px 0;
+}
+
+.main {
+  padding: 30px 0;
+}
+
+.time {
+  display: inline-block;
+  min-width: 32px;
+}
+
+.footer {
+  display: flex;
+}
+
+.btn {
+  .button();
+
+  flex: 1 1 50%;
+  height: @btnHeight;
+  line-height: @btnHeight;
+}
+
+.btnOK {
+  color: @white;
+  background-color: @primaryColor;
+  border-top-color: @primaryColor;
+  border-bottom-right-radius: @borderRadiusMedium;
+
+  &:hover {
+    background-color: darken(@primaryColor, 8%);
+    border-top-color: darken(@primaryColor, 8%);
+
+    &:active {
+      background-color: darken(@primaryColor, 12%);
+      border-top-color: darken(@primaryColor, 12%);
+    }
+  }
+}
+
+.btnCancel {
+  color: @textColor;
+  background-color: @white;
+  border-top-color: @borderColor;
+  border-bottom-left-radius: @borderRadiusMedium;
+
+  &:hover {
+    color: fadeout(@textColor, 24%);
+
+    &:active {
+      color: fadeout(@textColor, 36%);
+    }
+  }
+}

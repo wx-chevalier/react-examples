@@ -1,0 +1,33 @@
+@import 'skeleton/styles/animation.less';
+
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerHide {
+  display: none;
+}
+
+.content {
+  z-index: 11;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}

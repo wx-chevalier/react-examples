@@ -1,0 +1,113 @@
+// Part of this file is from [Google Material Design](https://material.io/design/).
+
+// Font.
+@fontFamily: 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC',
+  'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Font Size.
+@fontSizeSmall: 14px;
+@fontSizeMedium: 16px;
+
+// Font Weight.
+@fontWeightLight: 300;
+@fontWeightRegular: 400;
+@fontWeightMedium: 500;
+@fontWeightBold: 700;
+
+// Color.
+@black: #000;
+@white: #fff;
+@primaryColor: #1890ff;
+@backgroundColor: @white;
+@backgroundColorSecondary: #eee;
+@textColor: fade(@black, 87%);
+@textColorSecondary: fade(@black, 60%);
+@disabledColor: fade(@black, 38%);
+
+// Border.
+@borderColor: #e0e0e0;
+@borderRadiusMedium: 4px;
+@borderRadiusLarge: 6px;
+
+// Link.
+@linkColor: @primaryColor;
+@linkColorHover: lighten(@primaryColor, 12%);
+
+// Shadow.
+@shadowColor: rgba(0, 0, 0, 0.15);
+@shadowInformation: 0 2px 4px @shadowColor;
+@shadowCover: 0 4px 8px @shadowColor;
+@shadowNavigation: 0 6px 12px @shadowColor;
+@shadowModal: 0 10px 20px @shadowColor;
+
+// Type scale.
+.subtitleTypeScale() {
+  font-weight: @fontWeightRegular;
+  font-size: @fontSizeMedium;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.subtitleTypeScaleSecondary() {
+  font-weight: @fontWeightMedium;
+  font-size: @fontSizeSmall;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+.bodyTypeScale() {
+  font-weight: @fontWeightRegular;
+  font-size: @fontSizeMedium;
+  line-height: 28px;
+  letter-spacing: 0.44px;
+}
+
+.bodyTypeScaleSecondary() {
+  font-weight: @fontWeightRegular;
+  font-size: @fontSizeSmall;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.buttonTypeScale() {
+  font-weight: @fontWeightMedium;
+  font-size: @fontSizeSmall;
+  line-height: 16px;
+  letter-spacing: 1.35px;
+}
+
+// Mixins.
+.fullWidth() {
+  width: 100%;
+}
+
+.fullHeight() {
+  height: 100%;
+}
+
+.hDivider() {
+  border-bottom: 1px solid @borderColor;
+}
+
+.vDivider() {
+  border-left: 1px solid @borderColor;
+}
+
+.button {
+  .buttonTypeScale();
+
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  box-shadow: @shadowInformation;
+  outline: none;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.circle(@diameter) {
+  border-radius: 50%;
+  width: @diameter;
+  height: @diameter;
+  line-height: @diameter;
+}

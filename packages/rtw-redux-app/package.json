@@ -1,0 +1,41 @@
+{
+  "name": "rtw-redux-app",
+  "version": "0.0.1",
+  "description": "rtw-core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wx-chevalier/fe-boilerplates"
+  },
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "keywords": [
+    "webpack",
+    "react"
+  ],
+  "author": "wx-chevalier@github",
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{ts,tsx,scss,less,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run build:es && npm run build:cjs && npm run build:umd",
+    "build:es": "tsc --project ./tsconfig.es.json",
+    "build:cjs": "tsc --project ./tsconfig.cjs.json",
+    "build:umd": "webpack --config ./scripts/webpack/webpack.config.umd.js"
+  },
+  "dependencies": {
+    "rtw-core": "*"
+  },
+  "files": [
+    "dist/"
+  ]
+}

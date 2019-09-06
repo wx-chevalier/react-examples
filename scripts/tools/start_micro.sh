@@ -1,4 +1,4 @@
 #!/bin/bash
 set -ex
 
-(cd packages/fc-sg-react && npm start)
+(cd packages/rtw-host-app && npm start)
