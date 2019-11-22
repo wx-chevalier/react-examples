@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { checkPermissions, IAuthorityType } from './permissions';
+
+import { IAuthorityType, checkPermissions } from './permissions';
 
 interface AuthorizedProps {
   authority: IAuthorityType;
@@ -9,9 +10,10 @@ interface AuthorizedProps {
 export const Authorized: React.FunctionComponent<AuthorizedProps> = ({
   children,
   authority,
-  noMatch = null
+  noMatch = null,
 }) => {
-  const childrenRender: React.ReactNode = typeof children === 'undefined' ? null : children;
+  const childrenRender: React.ReactNode =
+    typeof children === 'undefined' ? null : children;
   const dom = checkPermissions(authority, childrenRender, noMatch);
   return <>{dom}</>;
 };

@@ -1,5 +1,6 @@
 import * as React from 'antd';
 import { Button, message, notification } from 'antd';
+
 import { formatMessage } from '@/i18n';
 
 declare global {
@@ -60,7 +61,7 @@ if (window.g_config && window.g_config.pwa) {
       description: formatMessage({ id: 'app.pwa.serviceworker.updated.hint' }),
       btn,
       key,
-      onClose: async () => {}
+      onClose: async () => {},
     });
   });
 } else if ('serviceWorker' in navigator) {

@@ -1,21 +1,26 @@
 import { Spin } from 'antd';
 import cn from 'classnames';
+import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
-import * as React from 'react';
 
 // import styles from './index.less';
 import { Exception } from 'rtw-components';
-import { ResolvedModule } from '../../manifest';
+
+import { ResolvedModule } from '../../../manifest';
 
 const { PureComponent, Suspense, lazy } = React;
 
-export interface IProps extends RouteComponentProps {
+interface IProps extends RouteComponentProps {
   appId: string;
   appLoader: () => Promise<ResolvedModule>;
   className?: string;
   fallback?: JSX.Element;
   onAppendReducer: (reducer: { [key: string]: object | undefined }) => void;
+}
+
+interface IState {
+  appError: any;
 }
 
 // 应用缓存
@@ -24,13 +29,9 @@ const appCache = {};
 /**
  * 应用懒加载与容错的容器
  */
-class AppContainer extends PureComponent<IProps> {
+class AppContainer extends PureComponent<IProps, IState> {
   static defaultProps = {
-    fallback: <Spin />
-  };
-
-  state = {
-    appError: null
+    fallback: <Spin />,
   };
 
   loadApp() {
@@ -44,12 +45,12 @@ class AppContainer extends PureComponent<IProps> {
       appLoader().then(appModule => {
         if ('reducer' in appModule) {
           onAppendReducer({
-            [appId]: appModule.reducer
+            [appId]: appModule.reducer,
           });
         }
 
         return appModule;
-      })
+      }),
     );
 
     appCache[appId] = app;

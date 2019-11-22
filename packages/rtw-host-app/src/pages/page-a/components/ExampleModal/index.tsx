@@ -1,4 +1,4 @@
-import * as cs from 'classnames';
+import cn from 'classnames';
 import * as React from 'react';
 import { useInterval } from 'react-fxxking-hooks';
 
@@ -29,7 +29,12 @@ export const ExampleModal = (props: ExampleModalProps) => {
   useInterval(() => setTime(prevTime => prevTime + 1), 1000, !show);
 
   return (
-    <Modal className={cs(className)} show={show} onKeyDown={_handleKeyDown} onMaskClick={onCancel}>
+    <Modal
+      className={cn(className)}
+      show={show}
+      onKeyDown={_handleKeyDown}
+      onMaskClick={onCancel}
+    >
       <div className={styles.content}>
         <header className={styles.header}>
           <h6>Dialog</h6>
@@ -41,10 +46,10 @@ export const ExampleModal = (props: ExampleModalProps) => {
           </div>
         </div>
         <div className={styles.footer}>
-          <div className={cs(styles.btn, styles.btnCancel)} onClick={onCancel}>
+          <div className={cn(styles.btn, styles.btnCancel)} onClick={onCancel}>
             Cancel
           </div>
-          <div className={cs(styles.btn, styles.btnOK)} onClick={onOK}>
+          <div className={cn(styles.btn, styles.btnOK)} onClick={onOK}>
             OK
           </div>
         </div>

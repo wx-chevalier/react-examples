@@ -1,6 +1,8 @@
 import * as React from 'react';
 
-export const isComponentClass = (component: React.ComponentClass | React.ReactNode): boolean => {
+export const isComponentClass = (
+  component: React.ComponentClass | React.ReactNode,
+): boolean => {
   if (!component) return false;
   const proto = Object.getPrototypeOf(component);
   if (proto === React.Component || proto === Function.prototype) return true;
@@ -11,7 +13,9 @@ export const isComponentClass = (component: React.ComponentClass | React.ReactNo
 // AuthorizedRoute is already instantiated
 // Authorized  render is already instantiated, children is no instantiated
 // Secured is not instantiated
-export const checkIsInstantiation = (target: React.ComponentClass | React.ReactNode) => {
+export const checkIsInstantiation = (
+  target: React.ComponentClass | React.ReactNode,
+) => {
   if (isComponentClass(target)) {
     const Target = target as React.ComponentClass;
     return (props: any) => <Target {...props} />;

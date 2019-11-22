@@ -8,7 +8,9 @@ export const firstUpperCase = (pathString: string): string =>
   pathString
     .replace('.', '')
     .split(/\/|-/)
-    .map((s): string => s.toLowerCase().replace(/( |^)[a-z]/g, L => L.toUpperCase()))
+    .map((s): string =>
+      s.toLowerCase().replace(/( |^)[a-z]/g, L => L.toUpperCase()),
+    )
     .filter((s): boolean => !!s)
     .join('');
 
@@ -19,7 +21,7 @@ const onBlockCopy = (label: string) => {
     ga('send', 'event', {
       eventCategory: 'block',
       eventAction: 'copy',
-      eventLabel: label
+      eventLabel: label,
     });
   }
 };
@@ -32,10 +34,10 @@ const BlockCodeView: React.SFC<{
       <Typography.Paragraph
         copyable={{
           text,
-          onCopy: () => onBlockCopy(text)
+          onCopy: () => onBlockCopy(text),
         }}
         style={{
-          display: 'flex'
+          display: 'flex',
         }}
       >
         <pre>
@@ -50,7 +52,12 @@ export default () => {
   const divDom = useRef<HTMLDivElement>(null);
   return (
     <Popover
-      title={<FormattedMessage id="app.preview.down.block" defaultMessage="下载此页面到本地项目" />}
+      title={
+        <FormattedMessage
+          id="app.preview.down.block"
+          defaultMessage="下载此页面到本地项目"
+        />
+      }
       placement="topLeft"
       content={<BlockCodeView text={'Test text'} />}
       trigger="click"

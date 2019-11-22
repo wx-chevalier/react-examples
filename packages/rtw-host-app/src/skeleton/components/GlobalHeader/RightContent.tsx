@@ -1,13 +1,16 @@
 import { Icon, Tooltip } from 'antd';
 import * as React from 'react';
+
 import { formatMessage } from '@/i18n';
 
-import { UserDropdown as User } from './UserDropdown';
-import HeaderSearch from '../HeaderSearch';
-import SelectLang from '../SelectLang';
-import styles from './index.less';
-import { NoticeIconView } from './NoticeIconView';
 import { NavContext } from '../../layouts/NavContext';
+import HeaderSearch from '../HeaderSearch';
+import SelectLang from '../LangSelector';
+
+import { NoticeIconView } from './NoticeIconView';
+import { UserDropdown as User } from './UserDropdown';
+
+import styles from './index.less';
 
 export type SiderTheme = 'light' | 'dark';
 export interface RightContentProps {
@@ -30,18 +33,18 @@ export const RightContent: React.SFC<RightContentProps> = props => {
       <HeaderSearch
         className={`${styles.action} ${styles.search}`}
         placeholder={formatMessage({
-          id: 'component.globalHeader.search'
+          id: 'component.globalHeader.search',
         })}
         dataSource={[
           formatMessage({
-            id: 'component.globalHeader.search.example1'
+            id: 'component.globalHeader.search.example1',
           }),
           formatMessage({
-            id: 'component.globalHeader.search.example2'
+            id: 'component.globalHeader.search.example2',
           }),
           formatMessage({
-            id: 'component.globalHeader.search.example3'
-          })
+            id: 'component.globalHeader.search.example3',
+          }),
         ]}
         onSearch={value => {
           console.log('input', value);
@@ -52,7 +55,7 @@ export const RightContent: React.SFC<RightContentProps> = props => {
       />
       <Tooltip
         title={formatMessage({
-          id: 'component.globalHeader.help'
+          id: 'component.globalHeader.help',
         })}
       >
         <a
@@ -66,8 +69,11 @@ export const RightContent: React.SFC<RightContentProps> = props => {
       </Tooltip>
       <NoticeIconView />
       <User
-        menu
-        currentUser={{ name: navContext.authority![0], avatar: 'https://i.pravatar.cc/300' }}
+        menu={true}
+        currentUser={{
+          name: navContext.authority![0],
+          avatar: 'https://i.pravatar.cc/300',
+        }}
       />
       <SelectLang className={styles.action} />
     </div>

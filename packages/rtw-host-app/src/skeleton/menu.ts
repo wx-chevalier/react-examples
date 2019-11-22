@@ -7,28 +7,28 @@ export const menu: MenuDataItem = {
     {
       icon: 'dashboard',
       path: '/page-home',
-      name: 'Home'
+      name: 'Home',
     },
     {
       icon: 'highlight',
       path: '/page-a',
-      name: 'Async App'
+      name: 'Async App',
     },
     {
       icon: 'form',
       path: '/redux-app',
-      name: 'Micro App'
+      name: 'Micro App',
     },
     {
       icon: 'exception',
       path: '/exception',
-      name: 'Exception'
+      name: 'Exception',
     },
     {
       icon: 'robot',
       path: '/admin',
       name: 'Admin',
-      authority: ['admin']
-    }
-  ]
+      authority: ['admin'],
+    },
+  ],
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PromiseComp from '../../skeleton/containers/PromiseComp';
+
 import { getAuthority } from './authority';
 
 export type IAuthorityType =
@@ -22,7 +23,7 @@ export const check = <T, K>(
   authority: IAuthorityType,
   currentAuthority: string[],
   target: T,
-  Exception: K
+  Exception: K,
 ): T | K | React.ReactNode => {
   // 没有判定权限.默认查看所有
   // Retirement authority, return target;
@@ -56,7 +57,9 @@ export const check = <T, K>(
 
   // Promise 处理
   if (authority instanceof Promise) {
-    return <PromiseComp<T, K> ok={target} error={Exception} promise={authority} />;
+    return (
+      <PromiseComp<T, K> ok={target} error={Exception} promise={authority} />
+    );
   }
 
   // Function 处理
@@ -67,7 +70,9 @@ export const check = <T, K>(
 
       // 函数执行后返回值是 Promise
       if (bool instanceof Promise) {
-        return <PromiseComp<T, K> ok={target} error={Exception} promise={bool} />;
+        return (
+          <PromiseComp<T, K> ok={target} error={Exception} promise={bool} />
+        );
       }
 
       if (bool) {
@@ -85,7 +90,7 @@ export const check = <T, K>(
 export function checkPermissions<T, K>(
   authority: IAuthorityType,
   target: T,
-  Exception: K
+  Exception: K,
 ): T | K | React.ReactNode {
   return check<T, K>(authority, getAuthority(), target, Exception);
 }

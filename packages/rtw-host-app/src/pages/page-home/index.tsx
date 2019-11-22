@@ -1,13 +1,14 @@
 import { Radio, message } from 'antd';
 import * as React from 'react';
 
-import * as styles from './index.less';
-
 import { themeClient } from '@/skeleton/env/theme';
 
-import { ThemeColor } from './components/ThemeColor';
 import { formatMessage } from '../../i18n/index';
 import { NavContext } from '../../skeleton/layouts/NavContext';
+
+import { ThemeColor } from './components/ThemeColor';
+
+import * as styles from './index.less';
 
 const updateTheme = (newPrimaryColor?: string) => {
   if (newPrimaryColor) {
@@ -23,7 +24,11 @@ export const Home: React.SFC = () => {
   return (
     <div className={styles.container}>
       <div>
-        <img src="https://i.postimg.cc/0N7w0mnN/image.png" style={{ width: 800 }} alt="" />
+        <img
+          src="https://i.postimg.cc/0N7w0mnN/image.png"
+          style={{ width: 800 }}
+          alt=""
+        />
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center' }}>

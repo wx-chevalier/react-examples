@@ -3,6 +3,7 @@ node_modules
 
 # OS junk files
 .DS_Store
+.stylelintcache
 
 # Project specific stuff
 .cache-loader

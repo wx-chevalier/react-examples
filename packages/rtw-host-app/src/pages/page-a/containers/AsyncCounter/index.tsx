@@ -1,9 +1,9 @@
+import { Button } from 'antd';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { commonActions } from '@/ducks/common';
 import { IState } from '@/ducks';
-import { Button } from 'antd';
+import { commonActions } from '@/ducks/common';
 
 export class AsyncCounterComp extends Component<any> {
   render() {
@@ -16,7 +16,12 @@ export class AsyncCounterComp extends Component<any> {
         </div>
 
         <div
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 24 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: 24,
+          }}
         >
           <Button
             style={{ marginRight: 16 }}
@@ -50,7 +55,7 @@ export class AsyncCounterComp extends Component<any> {
 
 export const AsyncCounter = connect(
   (state: IState) => ({
-    count: state.common.count
+    count: state.common.count,
   }),
-  { ...commonActions }
+  { ...commonActions },
 )(AsyncCounterComp);

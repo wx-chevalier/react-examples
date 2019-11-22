@@ -6,6 +6,6 @@ const prodConfig = require('../../../../scripts/webpack/webpack.config.prod');
 
 module.exports = merge(themeConfig, prodConfig, {
   entry: {
-    index: path.resolve(__dirname, '../../src/index')
-  }
+    index: path.resolve(__dirname, '../../src/index'),
+  },
 });

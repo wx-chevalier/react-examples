@@ -6,13 +6,13 @@ const devConfig = require('../../../../scripts/webpack/webpack.config.dev');
 
 module.exports = merge(devConfig, themeConfig, {
   entry: {
-    index: path.resolve(__dirname, '../../src/index.umd')
+    index: path.resolve(__dirname, '../../src/index.umd'),
   },
   devServer: {
     contentBase: path.resolve(__dirname, '../../public'),
-    port: 8081
+    port: 8081,
   },
   output: {
-    libraryTarget: 'umd'
-  }
+    libraryTarget: 'umd',
+  },
 });

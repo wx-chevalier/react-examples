@@ -1,9 +1,15 @@
 import { routerMiddleware } from 'connected-react-router';
-import { applyMiddleware, createStore, compose, ReducersMapObject } from 'redux';
+import {
+  ReducersMapObject,
+  applyMiddleware,
+  compose,
+  createStore,
+} from 'redux';
 import { middleware as reduxPackMiddleware } from 'redux-pack-fsa';
 import thunkMiddleware from 'redux-thunk';
 
 import { configReducer } from '../../ducks';
+
 import { history } from './history';
 
 declare let isProd: boolean;
@@ -16,7 +22,7 @@ declare global {
 const middlewares = applyMiddleware(
   routerMiddleware(history),
   thunkMiddleware,
-  reduxPackMiddleware
+  reduxPackMiddleware,
 );
 
 let enhancers = middlewares;
@@ -31,7 +37,11 @@ if (!isProd) {
 }
 
 export function configStore(initialState: object = {}) {
-  const store = createStore(configReducer({})(history), initialState, enhancers);
+  const store = createStore(
+    configReducer({})(history),
+    initialState,
+    enhancers,
+  );
 
   function appendReducer(asyncReducers: ReducersMapObject) {
     store.replaceReducer(configReducer(asyncReducers)(history));
@@ -39,7 +49,7 @@ export function configStore(initialState: object = {}) {
 
   return {
     ...store,
-    appendReducer
+    appendReducer,
   };
 }
 

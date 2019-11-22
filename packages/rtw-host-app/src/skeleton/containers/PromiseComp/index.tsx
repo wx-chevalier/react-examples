@@ -1,6 +1,6 @@
 import { Spin } from 'antd';
-import * as React from 'react';
 import isEqual from 'lodash/isEqual';
+import * as React from 'react';
 
 import { isComponentClass } from '../../types/comp';
 
@@ -19,14 +19,17 @@ export default class PromiseComp<T, K> extends React.Component<
   PromiseRenderState
 > {
   state: PromiseRenderState = {
-    component: () => null
+    component: () => null,
   };
 
   componentDidMount() {
     this.setRenderComponent(this.props);
   }
 
-  shouldComponentUpdate = (nextProps: PromiseRenderProps<T, K>, nextState: PromiseRenderState) => {
+  shouldComponentUpdate = (
+    nextProps: PromiseRenderProps<T, K>,
+    nextState: PromiseRenderState,
+  ) => {
     const { component } = this.state;
     if (!isEqual(nextProps, this.props)) {
       this.setRenderComponent(nextProps);
@@ -42,13 +45,13 @@ export default class PromiseComp<T, K> extends React.Component<
     props.promise
       .then(() => {
         this.setState({
-          component: ok
+          component: ok,
         });
         return true;
       })
       .catch(() => {
         this.setState({
-          component: error
+          component: error,
         });
       });
   }
@@ -58,7 +61,7 @@ export default class PromiseComp<T, K> extends React.Component<
   // Authorized  render is already instantiated, children is no instantiated
   // Secured is not instantiated
   checkIsInstantiation = (
-    target: React.ReactNode | React.ComponentClass
+    target: React.ReactNode | React.ComponentClass,
   ): React.FunctionComponent => {
     if (isComponentClass(target)) {
       const Target = target as React.ComponentClass;
@@ -67,7 +70,7 @@ export default class PromiseComp<T, K> extends React.Component<
     if (React.isValidElement(target)) {
       return (props: any) => React.cloneElement(target, props);
     }
-    return () => target as (React.ReactNode & null);
+    return () => target as React.ReactNode & null;
   };
 
   render() {
@@ -83,7 +86,7 @@ export default class PromiseComp<T, K> extends React.Component<
           height: '100%',
           margin: 'auto',
           paddingTop: 50,
-          textAlign: 'center'
+          textAlign: 'center',
         }}
       >
         <Spin size="large" />

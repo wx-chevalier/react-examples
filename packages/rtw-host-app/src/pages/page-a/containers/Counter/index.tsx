@@ -1,4 +1,4 @@
-import * as cs from 'classnames';
+import cn from 'classnames';
 import * as React from 'react';
 
 import { BaseReactProps } from '@/skeleton/types/props';
@@ -17,7 +17,7 @@ export const Counter = (props: CounterProps) => {
   const [showModal, setShowModal] = React.useState(false);
 
   return (
-    <div className={cs(className, styles.container)}>
+    <div className={cn(className, styles.container)}>
       <div>
         <span className={styles.value}>{value}</span>
         <button className={styles.btn} type="button" onClick={_handleClick(1)}>
@@ -36,7 +36,11 @@ export const Counter = (props: CounterProps) => {
           I need a dialog...
         </button>
       </div>
-      <ExampleModal show={showModal} onOK={_handleHideModal} onCancel={_handleHideModal} />
+      <ExampleModal
+        show={showModal}
+        onOK={_handleHideModal}
+        onCancel={_handleHideModal}
+      />
     </div>
   );
 
@@ -54,5 +58,5 @@ export const Counter = (props: CounterProps) => {
 };
 
 Counter.defaultProps = {
-  value: 0
+  value: 0,
 };

@@ -39,7 +39,7 @@ export function createError(
   code?: number | string,
   request?: any,
   response?: any,
-  meta?: any
+  meta?: any,
 ): EnhancedError {
   return enhanceError(new Error(message), code, request, response, meta);
 }
@@ -59,7 +59,7 @@ export function enhanceError(
   code?: number | string,
   request?: any,
   response?: any,
-  meta?: any
+  meta?: any,
 ): EnhancedError {
   const e: EnhancedError = error;
   if (code !== undefined) {

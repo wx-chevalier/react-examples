@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
 import { Tag, message } from 'antd';
-import { formatMessage } from '@/i18n';
 import groupBy from 'lodash/groupBy';
 import moment from 'moment';
+import React, { Component } from 'react';
 
-import { notices } from '@/apis/__mock__/notices';
+import { formatMessage } from '@/i18n';
 import { NoticeItem } from '@/models/global';
 import { CurrentUser } from '@/models/UserModel';
+import { notices } from '@/skeleton/apis/__mock__/notices';
 
 import NoticeIcon from '../NoticeIcon';
+
 import styles from './index.less';
 
 export interface NoticeIconViewProps {
@@ -21,7 +22,7 @@ export interface NoticeIconViewProps {
 
 export class NoticeIconView extends Component<NoticeIconViewProps> {
   static defaultProps = {
-    notices
+    notices,
   };
 
   changeReadState = (clickedItem: NoticeItem): void => {
@@ -30,12 +31,12 @@ export class NoticeIconView extends Component<NoticeIconViewProps> {
     console.log('changeNoticeReadState: ' + id);
   };
 
-  handleNoticeClear = (title: string, key: string) => {
+  handleNoticeClear = (title: string, _: string) => {
     message.success(
       `${formatMessage({
         id: 'component.noticeIcon.cleared',
-        defaultMessage: '清空完毕'
-      })} ${title}`
+        defaultMessage: '清空完毕',
+      })} ${title}`,
     );
 
     console.log('global/clearNotices');
@@ -59,7 +60,7 @@ export class NoticeIconView extends Component<NoticeIconViewProps> {
           todo: '',
           processing: 'blue',
           urgent: 'red',
-          doing: 'gold'
+          doing: 'gold',
         }[newNotice.status];
         newNotice.extra = (
           <Tag color={color} style={{ marginRight: 0 }}>
@@ -99,15 +100,18 @@ export class NoticeIconView extends Component<NoticeIconViewProps> {
           this.changeReadState(item as NoticeItem);
         }}
         loading={fetchingNotices}
-        clearText={formatMessage({ id: 'component.noticeIcon.clear', defaultMessage: '清空' })}
+        clearText={formatMessage({
+          id: 'component.noticeIcon.clear',
+          defaultMessage: '清空',
+        })}
         viewMoreText={formatMessage({
           id: 'component.noticeIcon.view-more',
-          defaultMessage: '更多'
+          defaultMessage: '更多',
         })}
         onClear={this.handleNoticeClear}
         onPopupVisibleChange={onNoticeVisibleChange}
         onViewMore={() => message.info('Click on view more')}
-        clearClose
+        clearClose={true}
       >
         <NoticeIcon.Tab
           tabKey="notification"
@@ -115,35 +119,41 @@ export class NoticeIconView extends Component<NoticeIconViewProps> {
           list={noticeData.notification}
           title={formatMessage({
             id: 'component.globalHeader.notification',
-            defaultMessage: '通知'
+            defaultMessage: '通知',
           })}
           emptyText={formatMessage({
             id: 'component.globalHeader.notification.empty',
-            defaultMessage: '暂无通知'
+            defaultMessage: '暂无通知',
           })}
-          showViewMore
+          showViewMore={true}
         />
         <NoticeIcon.Tab
           tabKey="message"
           count={unreadMsg.message}
           list={noticeData.message}
-          title={formatMessage({ id: 'component.globalHeader.message', defaultMessage: '评论' })}
+          title={formatMessage({
+            id: 'component.globalHeader.message',
+            defaultMessage: '评论',
+          })}
           emptyText={formatMessage({
             id: 'component.globalHeader.message.empty',
-            defaultMessage: '暂无评论'
+            defaultMessage: '暂无评论',
           })}
-          showViewMore
+          showViewMore={true}
         />
         <NoticeIcon.Tab
           tabKey="event"
-          title={formatMessage({ id: 'component.globalHeader.event', defaultMessage: '事件' })}
+          title={formatMessage({
+            id: 'component.globalHeader.event',
+            defaultMessage: '事件',
+          })}
           emptyText={formatMessage({
             id: 'component.globalHeader.event.empty',
-            defaultMessage: '暂无事件'
+            defaultMessage: '暂无事件',
           })}
           count={unreadMsg.event}
           list={noticeData.event}
-          showViewMore
+          showViewMore={true}
         />
       </NoticeIcon>
     );

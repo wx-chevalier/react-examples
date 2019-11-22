@@ -6,7 +6,7 @@ export interface IState {
 }
 
 const initialState: IState = {
-  count: 0
+  count: 0,
 };
 
 export const actions = createActions({
@@ -20,7 +20,7 @@ export const actions = createActions({
 
   async error() {
     throw new Error('Error');
-  }
+  },
 });
 
 export const commonActions = actions;
@@ -33,10 +33,13 @@ export default handleActions<IState, any>(
       return handle(state, action, {
         start: (prevState: IState) => ({
           ...prevState,
-          isLoading: true
+          isLoading: true,
         }),
         finish: (prevState: IState) => ({ ...prevState, isLoading: false }),
-        success: (prevState: IState) => ({ ...prevState, count: prevState.count + payload })
+        success: (prevState: IState) => ({
+          ...prevState,
+          count: prevState.count + payload,
+        }),
       });
     },
 
@@ -44,16 +47,19 @@ export default handleActions<IState, any>(
       const { payload } = action;
 
       return handle(state, action, {
-        success: (prevState: IState) => ({ ...prevState, count: prevState.count - payload })
+        success: (prevState: IState) => ({
+          ...prevState,
+          count: prevState.count - payload,
+        }),
       });
     },
 
     [actions.error.toString()](state: IState, action) {
       const { payload } = action;
       return handle(state, action, {
-        failure: (prevState: IState) => ({ ...prevState, error: payload })
+        failure: (prevState: IState) => ({ ...prevState, error: payload }),
       });
-    }
+    },
   },
-  initialState
+  initialState,
 );

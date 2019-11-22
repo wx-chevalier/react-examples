@@ -1,4 +1,4 @@
-import { shallow, ShallowWrapper } from 'enzyme';
+import { ShallowWrapper, shallow } from 'enzyme';
 import * as React from 'react';
 
 import { Counter, CounterProps } from '../';
@@ -10,7 +10,7 @@ describe('Counter Component', () => {
   beforeAll(() => {
     props = {
       className: 'counter-test',
-      value: 0
+      value: 0,
     };
     wrapper = shallow(<Counter {...props} />);
   });

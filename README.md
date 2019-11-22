@@ -162,7 +162,7 @@ export function render(_importApp: Function) {
   window.__HOST_APP__ = {
     title: 'HOST APP',
     module: '/release/rtw-host-app/index.js',
-    css: '/release/rtw-host-app/index.css'
+    css: '/release/rtw-host-app/index.css',
   };
 
   window.__DEV_APP__ = { id: 'dev', name: 'DEV APP', module: '/index.js' };
@@ -174,10 +174,10 @@ export function render(_importApp: Function) {
 
 # About
 
-## ChangeLog
+## Todos
 
 - [x] 使用 ESLint 替换 TSLint
-- [ ] 将现有项目中的通用配置抽出到 m-fe-configs 中
+- [x] 将现有项目中的通用配置抽出到 m-fe-configs 中
 
 ## Home & More
 

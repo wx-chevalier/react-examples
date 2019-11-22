@@ -7,9 +7,9 @@ const rootPath = process.cwd();
 
 module.exports = merge(umdConfig, {
   output: {
-    library: 'rtwCore'
+    library: 'rtwCore',
   },
   entry: {
-    index: path.resolve(rootPath, './src/index.ts')
-  }
+    index: path.resolve(rootPath, './src/index.ts'),
+  },
 });

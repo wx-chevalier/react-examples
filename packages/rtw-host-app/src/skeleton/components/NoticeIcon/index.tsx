@@ -1,12 +1,14 @@
 import { Badge, Icon, Spin, Tabs } from 'antd';
-import React, { Component } from 'react';
 import classNames from 'classnames';
+import React, { Component } from 'react';
 
 import { NoticeIconData } from '@/models/global';
 
-import styles from './index.less';
 import HeaderDropdown from '../HeaderDropdown';
+
 import NoticeList, { NoticeIconTabProps } from './NoticeList';
+
+import styles from './index.less';
 
 const { TabPane } = Tabs;
 
@@ -39,11 +41,12 @@ export default class NoticeIcon extends Component<NoticeIconProps> {
     onViewMore: (): void => {},
     loading: false,
     clearClose: false,
-    emptyImage: 'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg'
+    emptyImage:
+      'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg',
   };
 
   state = {
-    visible: false
+    visible: false,
   };
 
   onItemClick = (item: NoticeIconData, tabProps: NoticeIconTabProps): void => {
@@ -85,10 +88,18 @@ export default class NoticeIcon extends Component<NoticeIconProps> {
         if (!child) {
           return null;
         }
-        const { list, title, count, tabKey, showClear, showViewMore } = child.props;
+        const {
+          list,
+          title,
+          count,
+          tabKey,
+          showClear,
+          showViewMore,
+        } = child.props;
         const len = list && list.length ? list.length : 0;
         const msgCount = count || count === 0 ? count : len;
-        const tabTitle: string = msgCount > 0 ? `${title} (${msgCount})` : title;
+        const tabTitle: string =
+          msgCount > 0 ? `${title} (${msgCount})` : title;
         return (
           <TabPane tab={tabTitle} key={title}>
             <NoticeList
@@ -105,7 +116,7 @@ export default class NoticeIcon extends Component<NoticeIconProps> {
             />
           </TabPane>
         );
-      }
+      },
     );
     return (
       <>
@@ -134,7 +145,11 @@ export default class NoticeIcon extends Component<NoticeIconProps> {
     const NoticeBellIcon = bell || <Icon type="bell" className={styles.icon} />;
     const trigger = (
       <span className={classNames(noticeButtonClass, { opened: visible })}>
-        <Badge count={count} style={{ boxShadow: 'none' }} className={styles.badge}>
+        <Badge
+          count={count}
+          style={{ boxShadow: 'none' }}
+          className={styles.badge}
+        >
           {NoticeBellIcon}
         </Badge>
       </span>

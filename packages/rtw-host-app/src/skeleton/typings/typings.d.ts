@@ -32,7 +32,7 @@ interface Window {
   ga: (
     command: 'send',
     hitType: 'event' | 'pageview',
-    fieldsObject: GAFieldsObject | string
+    fieldsObject: GAFieldsObject | string,
   ) => void;
 }
 

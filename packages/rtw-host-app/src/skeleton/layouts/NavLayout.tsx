@@ -1,22 +1,22 @@
-import { Icon } from 'antd';
 import ProLayout, {
+  BasicLayoutProps as ProLayoutProps,
   MenuDataItem,
-  BasicLayoutProps as ProLayoutProps
 } from '@ant-design/pro-layout';
+import { Icon } from 'antd';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import { formatMessage } from '@/i18n';
 import { checkPermissions } from '@/skeleton/auth';
-import { setAuthority, getAuthority } from '@/skeleton/auth/authority';
-
-import * as styles from './index.less';
-
-import { RightContent } from '../components/GlobalHeader/RightContent';
+import { getAuthority, setAuthority } from '@/skeleton/auth/authority';
 
 import Logo from '../../assets/logo.svg';
+import { RightContent } from '../components/GlobalHeader/RightContent';
 import { menu } from '../menu';
+
 import { NavContext } from './NavContext';
+
+import * as styles from './index.less';
 
 export interface NavLayoutProps extends ProLayoutProps {
   matchedPath?: string;
@@ -27,7 +27,10 @@ export interface NavLayoutProps extends ProLayoutProps {
  */
 const menuDataRender = (menuList: MenuDataItem[]): MenuDataItem[] =>
   menuList.map(item => {
-    const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] };
+    const localItem = {
+      ...item,
+      children: item.children ? menuDataRender(item.children) : [],
+    };
     return checkPermissions(item.authority, localItem, null) as MenuDataItem;
   });
 
@@ -41,7 +44,7 @@ const footerRender: NavLayoutProps['footerRender'] = () => {
       style={{
         textAlign: 'center',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <h3 style={{ marginRight: 16 }}>王下邀月熊，项目地址：</h3>
@@ -72,7 +75,7 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
           onAuthorityChange: (a: string[]) => {
             setAuthority(a);
             _setAuthority(a);
-          }
+          },
         }}
       >
         <ProLayout
@@ -92,7 +95,13 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
             // 判断是否选中
             if ((matchedPath || '').startsWith(menuItemProps.path)) {
               return (
-                <div className={collapse ? styles.selectedMenuCollapsed : styles.selectedMenu}>
+                <div
+                  className={
+                    collapse
+                      ? styles.selectedMenuCollapsed
+                      : styles.selectedMenu
+                  }
+                >
                   {defaultDom}
                 </div>
               );
@@ -104,7 +113,9 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
             return (
               <span>
                 <span>{defaultRenderCollapsedButton(_collapsed)}</span>
-                <span style={{ marginLeft: 8, fontSize: 16 }}>Custom App Breadcrumb Nav</span>
+                <span style={{ marginLeft: 8, fontSize: 16 }}>
+                  Custom App Breadcrumb Nav
+                </span>
               </span>
             );
           }}
@@ -114,13 +125,13 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
                 path: '/',
                 breadcrumbName: formatMessage({
                   id: 'menu.home',
-                  defaultMessage: 'Home'
-                })
+                  defaultMessage: 'Home',
+                }),
               },
-              ...routers
+              ...routers,
             ];
           }}
-          itemRender={(route, params, routes, paths) => {
+          itemRender={(route, _, routes, paths) => {
             console.log('A');
             const first = routes.indexOf(route) === 0;
 

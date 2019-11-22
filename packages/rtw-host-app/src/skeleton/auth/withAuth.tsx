@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import { checkPermissions } from './permissions';
 import { checkIsInstantiation } from '../types/comp';
+
+import { checkPermissions } from './permissions';
 
 /**
  * 默认不能访问任何页面
@@ -39,8 +40,14 @@ export const withAuth = (authority: string, error?: React.ReactNode) => {
     throw new Error('authority is required');
   }
 
-  return function decideAuthority(target: React.ComponentClass | React.ReactNode) {
-    const component = checkPermissions(authority, target, classError || Exception403);
+  return function decideAuthority(
+    target: React.ComponentClass | React.ReactNode,
+  ) {
+    const component = checkPermissions(
+      authority,
+      target,
+      classError || Exception403,
+    );
     return checkIsInstantiation(component);
   };
 };

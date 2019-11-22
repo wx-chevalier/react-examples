@@ -1,4 +1,4 @@
-import * as cs from 'classnames';
+import cn from 'classnames';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -11,10 +11,10 @@ export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
 
   return (
     <section>
-      <header className={cs(className, styles.container)}>
+      <header className={cn(className, styles.container)}>
         <nav className={styles.nav}>
           <NavLink
-            exact
+            exact={true}
             to={`${basePath}/count`}
             className={styles.link}
             activeClassName={styles.active}
@@ -22,7 +22,7 @@ export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
             Hooks Count
           </NavLink>
           <NavLink
-            exact
+            exact={true}
             to={`${basePath}/async-count`}
             className={styles.link}
             activeClassName={styles.active}
@@ -30,7 +30,7 @@ export const AppHeader = (props: BaseReactProps & { basePath: string }) => {
             Async Count（Redux）
           </NavLink>
           <NavLink
-            exact
+            exact={true}
             to={`${basePath}/about`}
             className={styles.link}
             activeClassName={styles.active}

@@ -1,5 +1,5 @@
-import * as client from 'webpack-theme-color-replacer/client';
 import generate from '@ant-design/colors/lib/generate';
+import * as client from 'webpack-theme-color-replacer/client';
 
 export const themeClient = {
   getAntdSerials(color: string): string[] {
@@ -7,7 +7,9 @@ export const themeClient = {
     const divide = 10;
     // 淡化（即less的tint）
     let lightens = new Array(lightCount).fill(0);
-    lightens = lightens.map((_, i) => client.varyColor.lighten(color, i / divide));
+    lightens = lightens.map((_, i) =>
+      client.varyColor.lighten(color, i / divide),
+    );
     const colorPalettes = generate(color);
     return lightens.concat(colorPalettes);
   },
@@ -22,8 +24,8 @@ export const themeClient = {
       changeUrl(cssUrl: string): string {
         // while router is not `hash` mode, it needs absolute path
         return `/${cssUrl}`;
-      }
+      },
     };
     return client.changer.changeColor(options, Promise);
-  }
+  },
 };

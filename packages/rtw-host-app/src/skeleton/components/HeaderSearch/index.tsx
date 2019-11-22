@@ -1,9 +1,9 @@
 import { AutoComplete, Icon, Input } from 'antd';
 import { AutoCompleteProps, DataSourceItemType } from 'antd/es/auto-complete';
-import React, { Component } from 'react';
-
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
+import React, { Component } from 'react';
+
 import styles from './index.less';
 
 export interface HeaderSearchProps {
@@ -24,7 +24,10 @@ interface HeaderSearchState {
   searchMode: boolean;
 }
 
-export default class HeaderSearch extends Component<HeaderSearchProps, HeaderSearchState> {
+export default class HeaderSearch extends Component<
+  HeaderSearchProps,
+  HeaderSearchState
+> {
   static defaultProps = {
     defaultActiveFirstOption: false,
     onPressEnter: () => {},
@@ -32,33 +35,33 @@ export default class HeaderSearch extends Component<HeaderSearchProps, HeaderSea
     onChange: () => {},
     className: '',
     placeholder: '',
-    dataSource: [],
+    dataSource: [] as any[],
     defaultOpen: false,
-    onVisibleChange: () => {}
+    onVisibleChange: () => {},
   };
 
   static getDerivedStateFromProps(props: HeaderSearchProps) {
     if ('open' in props) {
       return {
-        searchMode: props.open
+        searchMode: props.open,
       };
     }
     return null;
   }
 
-  private timeout: number | undefined = undefined;
+  timeout: number | undefined = undefined;
 
-  private inputRef: Input | null = null;
+  inputRef: Input | null = null;
 
   constructor(props: HeaderSearchProps) {
     super(props);
     this.state = {
       searchMode: props.defaultOpen,
-      value: ''
+      value: '',
     };
     this.debouncePressEnter = debounce(this.debouncePressEnter, 500, {
       leading: true,
-      trailing: false
+      trailing: false,
     });
   }
 
@@ -103,7 +106,7 @@ export default class HeaderSearch extends Component<HeaderSearchProps, HeaderSea
   leaveSearchMode = () => {
     this.setState({
       searchMode: false,
-      value: ''
+      value: '',
     });
   };
 
@@ -118,7 +121,7 @@ export default class HeaderSearch extends Component<HeaderSearchProps, HeaderSea
     const { searchMode, value } = this.state;
     delete restProps.defaultOpen; // for rc-select not affected
     const inputClass = classNames(styles.input, {
-      [styles.show]: searchMode
+      [styles.show]: searchMode,
     });
 
     return (

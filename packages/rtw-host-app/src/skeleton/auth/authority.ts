@@ -8,7 +8,8 @@ export function getAuthority(str?: string): string[] {
     return currentAuthority;
   }
 
-  const authorityString = typeof str === 'undefined' ? localStorage.getItem(key) : str;
+  const authorityString =
+    typeof str === 'undefined' ? localStorage.getItem(key) : str;
 
   // authorityString could be admin, "admin", ["admin"]
   let authority;

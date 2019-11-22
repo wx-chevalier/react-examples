@@ -1,4 +1,4 @@
-import * as cs from 'classnames';
+import cn from 'classnames';
 import * as React from 'react';
 
 import { BaseReactProps } from '@/skeleton/types/props';
@@ -20,7 +20,13 @@ export interface ModalProps extends BaseReactProps {
 }
 
 export const Modal = (props: ModalProps) => {
-  const { className, children, show, onKeyDown = noop, onMaskClick = noop } = props;
+  const {
+    className,
+    children,
+    show,
+    onKeyDown = noop,
+    onMaskClick = noop,
+  } = props;
   const [visible, setVisible] = React.useState(false);
   React.useEffect(() => {
     setVisible(prevVisible => {
@@ -42,22 +48,22 @@ export const Modal = (props: ModalProps) => {
   }, [show, onKeyDown]);
   return (
     <div
-      className={cs(className, styles.container, {
-        [styles.containerHide]: !visible
+      className={cn(className, styles.container, {
+        [styles.containerHide]: !visible,
       })}
       onAnimationEnd={_handleAnimationEnd}
     >
       <div
-        className={cs(styles.mask, {
+        className={cn(styles.mask, {
           [styles.fadeIn]: show,
-          [styles.fadeOut]: !show
+          [styles.fadeOut]: !show,
         })}
         onClick={onMaskClick}
       />
       <div
-        className={cs(styles.content, {
+        className={cn(styles.content, {
           [styles.zoomIn]: show,
-          [styles.zoomOut]: !show
+          [styles.zoomOut]: !show,
         })}
       >
         {children}

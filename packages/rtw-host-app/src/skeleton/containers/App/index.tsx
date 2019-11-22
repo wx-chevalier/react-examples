@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { RouteComponentProps, Route, Redirect, Switch } from 'react-router';
+import { Redirect, Route, RouteComponentProps, Switch } from 'react-router';
 import { withRouter } from 'react-router-dom';
 
-import * as styles from './index.less';
-import { manifest, Module } from '../../manifest';
-import AppContainer from '../AppContainer';
-import store from '../../../store/store';
-import { NavLayout } from '../../layouts/NavLayout';
+import store from '@/skeleton/env/store';
+
+import { Module, manifest } from '../../../manifest';
 import { Exception404 } from '../../components/exception/404';
+import { NavLayout } from '../../layouts/NavLayout';
+import AppContainer from '../AppContainer';
+
+import * as styles from './index.less';
 
 export interface IAppProps extends RouteComponentProps {}
 
@@ -65,7 +67,4 @@ export class App extends React.Component<IAppProps, IAppState> {
   }
 }
 
-export default connect(
-  state => ({ ...state }),
-  {}
-)(withRouter(App));
+export default connect(state => ({ ...state }), {})(withRouter(App));

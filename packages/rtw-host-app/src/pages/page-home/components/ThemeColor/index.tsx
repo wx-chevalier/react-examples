@@ -32,48 +32,51 @@ export const ThemeColor: React.FC<ThemeColorProps> = ({
   title,
   value,
   onChange,
-  formatMessage
+  formatMessage,
 }) => {
   const colorList = colors || [
     {
       key: 'dust',
-      color: '#F5222D'
+      color: '#F5222D',
     },
     {
       key: 'volcano',
-      color: '#FA541C'
+      color: '#FA541C',
     },
     {
       key: 'sunset',
-      color: '#FAAD14'
+      color: '#FAAD14',
     },
     {
       key: 'cyan',
-      color: '#13C2C2'
+      color: '#13C2C2',
     },
     {
       key: 'green',
-      color: '#52C41A'
+      color: '#52C41A',
     },
     {
       key: 'daybreak',
-      color: '#1890FF'
+      color: '#1890FF',
     },
     {
       key: 'geekblue',
-      color: '#2F54EB'
+      color: '#2F54EB',
     },
     {
       key: 'purple',
-      color: '#722ED1'
-    }
+      color: '#722ED1',
+    },
   ];
   return (
     <div className={styles.themeColor}>
       <h3 className={styles.themeColorTitle}>{title}</h3>
       <div className={styles.themeColorContent}>
         {colorList.map(({ key, color }) => (
-          <Tooltip key={color} title={formatMessage({ id: `app.setting.themecolor.${key}` })}>
+          <Tooltip
+            key={color}
+            title={formatMessage({ id: `app.setting.themecolor.${key}` })}
+          >
             <Tag
               className={styles.themeColorBlock}
               color={color}
