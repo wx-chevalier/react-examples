@@ -16,6 +16,6 @@ export function setupAxios() {
     },
     error => {
       return Promise.reject(error);
-    }
+    },
   );
 }

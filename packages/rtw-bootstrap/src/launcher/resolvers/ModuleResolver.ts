@@ -67,7 +67,11 @@ export class ModuleResolver {
 
     if ('css' in mod && mod.css != null) {
       if (Array.isArray(mod.css)) {
-        this.css.push(...mod.css.map(cssHref => this.getUrlWithVersion(cssHref, mod.version)));
+        this.css.push(
+          ...mod.css.map(cssHref =>
+            this.getUrlWithVersion(cssHref, mod.version),
+          ),
+        );
       } else {
         this.css.push(this.getUrlWithVersion(mod.css, mod.version));
       }

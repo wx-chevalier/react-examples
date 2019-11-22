@@ -6,22 +6,15 @@
     "type": "git",
     "url": "https://github.com/wx-chevalier/fe-boilerplates"
   },
+  "author": "wx-chevalier@github",
   "license": "MIT",
+  "files": [
+    "dist/"
+  ],
   "keywords": [
     "webpack",
     "react"
   ],
-  "author": "wx-chevalier@github",
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true
-  },
-  "lint-staged": {
-    "*.{ts,tsx,scss,less,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "scripts": {
     "analyze": "npm run stats && webpack-bundle-analyzer dist/stats.json",
     "build": "npm run build:prod",
@@ -42,9 +35,36 @@
   "devDependencies": {
     "@wx-fc/app-config": "^0.1.38",
     "cross-env": "^6.0.3",
+    "eslint": "^6.6.0",
+    "npm-run-all": "^4.1.5",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2",
     "webpack": "^4.41.2"
   },
-  "files": [
-    "dist/"
-  ]
+  "browserslist": [
+    "extends @wx-fc/browserslist-config/modern"
+  ],
+  "commitlint": {
+    "extends": [
+      "@wx-fc"
+    ]
+  },
+  "prettier": "@wx-fc/prettier-config/semi",
+  "remarkConfig": {
+    "plugins": [
+      "@wx-fc/remark-config"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "@wx-fc/stylelint-config",
+      "@wx-fc/stylelint-config/modules"
+    ],
+    "rules": {
+      "font-family-no-missing-generic-family-keyword": null,
+      "no-descending-specificity": null,
+      "plugin/no-unsupported-browser-features": null,
+      "plugin/no-low-performance-animation-properties": null
+    }
+  }
 }

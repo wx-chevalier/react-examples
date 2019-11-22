@@ -1,7 +1,9 @@
-import { IAppModule } from 'rtw-core/src/constant/types';
 import axios from 'axios';
+
+import { IAppModule } from 'rtw-core/src/constant/types';
+
 import { vendors } from './config/vendors';
-import { init, registerModule, importApp } from './launcher';
+import { importApp, init, registerModule } from './launcher';
 
 declare const isProd: boolean;
 
@@ -31,8 +33,8 @@ if (!isProd) {
     apps: [devApp],
     vendors: vendors.map(vendorConfig => ({
       ...vendorConfig,
-      ...vendorConfig.dev
-    }))
+      ...vendorConfig.dev,
+    })),
   });
 } else {
   // 线上模式，则会直接加载配置好的线上应用；BootStrap 中声明可用的应用，Host App 中对应用进行可视化编排
@@ -40,8 +42,8 @@ if (!isProd) {
     apps: [],
     vendors: vendors.map(vendorConfig => ({
       ...vendorConfig,
-      ...vendorConfig.prod
-    }))
+      ...vendorConfig.prod,
+    })),
   });
 }
 

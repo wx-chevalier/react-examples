@@ -9,5 +9,5 @@
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true
   },
-  "include": ["**/*.js", "**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
