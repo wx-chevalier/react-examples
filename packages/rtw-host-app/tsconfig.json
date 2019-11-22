@@ -6,5 +6,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "../rtw-components/src/decorators/exception"]
+  "include": ["src/**/*"]
 }

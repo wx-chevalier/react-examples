@@ -33,6 +33,8 @@
     "systemjs": "^6.1.4"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/react": "^5.2.6",
     "@wx-fc/app-config": "^0.1.38",
     "cross-env": "^6.0.3",
     "eslint": "^6.6.0",

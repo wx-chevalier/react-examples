@@ -40,6 +40,11 @@
     "rtw-core": "*"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-info": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
     "@wx-fc/app-config": "^0.1.38",
     "cross-env": "^6.0.3"
   },
