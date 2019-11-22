@@ -24,10 +24,14 @@
   },
   "scripts": {
     "analyze": "npm run stats && webpack-bundle-analyzer dist/stats.json",
-    "clean": "rimraf dist",
-    "dev": "webpack-dev-server --config ./scripts/webpack/webpack.config.dev.js --hot",
     "build": "npm run build:prod",
     "build:prod": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.prod.js -p",
+    "clean": "rimraf dist",
+    "dev": "webpack-dev-server --config ./scripts/webpack/webpack.config.dev.js --hot",
+    "lint": "run-p lint:*",
+    "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache --ext js,md,ts,tsx -f friendly --max-warnings 10",
+    "lint:ts": "tslint -p . -t stylish",
+    "lint:tsc": "tsc -p tsconfig.json --incremental false --noEmit",
     "start": "npm run dev",
     "stats": "cross-env NODE_ENV=production webpack --config ./scripts/webpack.config.prod.js --mode production --profile --json > dist/stats.json"
   },

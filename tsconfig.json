@@ -3,11 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["packages/ufc-host-app/src/*"]
+      "@/*": ["packages/rtw-host-app/src/*"]
     },
     "strictFunctionTypes": false,
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true
   },
-  "include": ["packages/**"]
+  "include": ["**/*.js", "**/*.ts", "**/*.tsx"]
 }

@@ -4,8 +4,8 @@ import ProLayout, {
 } from '@ant-design/pro-layout';
 import { Icon } from 'antd';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import SVG from 'react-inlinesvg';
+import { Link } from 'react-router-dom';
 
 import { formatMessage } from '@/i18n';
 import { checkPermissions } from '@/skeleton/auth';

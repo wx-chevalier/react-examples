@@ -20,8 +20,12 @@
     "build": "npm run build:es && npm run build:cjs && npm run build:umd",
     "build:es": "tsc --project ./tsconfig.es.json",
     "build:cjs": "tsc --project ./tsconfig.cjs.json",
-    "dev": "tsc -w --project ./tsconfig.cjs.json",
     "build:umd": "cross-env NODE_ENV=production webpack -p --config ./scripts/webpack/webpack.config.umd.js",
+    "dev": "tsc -w --project ./tsconfig.cjs.json",
+    "lint": "run-p lint:*",
+    "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache --ext js,md,ts,tsx -f friendly --max-warnings 10",
+    "lint:ts": "tslint -p . -t stylish",
+    "lint:tsc": "tsc -p tsconfig.json --incremental false --noEmit",
     "test": "jest --config ./scripts/jest/jest.config.js",
     "test:watch": "npm test -- --watch",
     "test:cov": "npm run cleanCov && npm test -- --coverage"
