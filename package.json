@@ -40,7 +40,7 @@
     "upgrade": "./scripts/tools/upgrade_pkgs.sh"
   },
   "devDependencies": {
-    "@wx-fc/app-config": "0.1.38"
+    "@wx-fc/app-config": "^0.2.2"
   },
   "browserslist": [
     "extends @wx-fc/browserslist-config/modern"

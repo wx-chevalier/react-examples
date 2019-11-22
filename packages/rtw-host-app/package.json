@@ -17,7 +17,7 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "prebuild": "npm run clean && npm run cleanCov",
-    "clean": "rimraf dist/*",
+    "clean": "rimraf dist/* && rimraf build/*",
     "cleanCov": "rimraf @coverage",
     "build": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.prod.js -p",
     "build:umd": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.umd.js -p",
@@ -63,7 +63,7 @@
     "umi-request": "^1.2.10"
   },
   "devDependencies": {
-    "@wx-fc/app-config": "^0.1.38",
+    "@wx-fc/app-config": "^0.2.2",
     "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "npm-run-all": "^4.1.5",

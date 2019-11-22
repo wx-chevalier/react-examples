@@ -10,10 +10,11 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
   && yarn --frozen-lockfile
 
 RUN yarn build
+RUN find . -name '*.map' -type f -exec rm -f {} \;
 
 # 将子应用内的入口拷贝到根目录
 
 # 最终的应用
 FROM abiosoft/caddy
-COPY --from=builder /app/dist /srv
+COPY --from=builder /app/packages/rtw-host-app/build /srv
 EXPOSE 2015

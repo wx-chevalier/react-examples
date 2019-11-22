@@ -17,9 +17,9 @@ module.exports = {
           default:
             return selector;
         }
-      }
-    })
-  ]
+      },
+    }),
+  ],
 };
 
 /** 获取系列颜色 */
