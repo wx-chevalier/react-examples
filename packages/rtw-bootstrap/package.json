@@ -27,9 +27,9 @@
     "clean": "rimraf dist",
     "dev": "webpack-dev-server --config ./scripts/webpack/webpack.config.dev.js --hot",
     "build": "npm run build:prod",
-    "build:prod": "NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.prod.js -p",
-    "start": "webpack-dashboard -- npm run dev",
-    "stats": "webpack --config ./scripts/webpack.config.prod.js --mode production --profile --json > dist/stats.json"
+    "build:prod": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.prod.js -p",
+    "start": "npm run dev",
+    "stats": "cross-env NODE_ENV=production webpack --config ./scripts/webpack.config.prod.js --mode production --profile --json > dist/stats.json"
   },
   "dependencies": {
     "rtw-core": "*",

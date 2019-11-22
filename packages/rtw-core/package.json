@@ -21,7 +21,7 @@
     "build:es": "tsc --project ./tsconfig.es.json",
     "build:cjs": "tsc --project ./tsconfig.cjs.json",
     "dev": "tsc -w --project ./tsconfig.cjs.json",
-    "build:umd": "webpack -p --config ./scripts/webpack/webpack.config.umd.js",
+    "build:umd": "cross-env NODE_ENV=production webpack -p --config ./scripts/webpack/webpack.config.umd.js",
     "test": "jest --config ./scripts/jest/jest.config.js",
     "test:watch": "npm test -- --watch",
     "test:cov": "npm run cleanCov && npm test -- --coverage"
