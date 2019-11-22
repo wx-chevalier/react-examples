@@ -34,7 +34,7 @@ class AppContainer extends PureComponent<IProps, IState> {
     fallback: <Spin />,
   };
 
-  state = {};
+  state: IState = {};
 
   loadApp() {
     const { appLoader, appId, onAppendReducer } = this.props;
