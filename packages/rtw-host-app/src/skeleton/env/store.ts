@@ -12,7 +12,7 @@ import { configReducer } from '../../ducks';
 
 import { history } from './history';
 
-declare let isProd: boolean;
+declare let __DEV__: boolean;
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: Function;
@@ -27,7 +27,7 @@ const middlewares = applyMiddleware(
 
 let enhancers = middlewares;
 
-if (!isProd) {
+if (__DEV__) {
   const composeEnhancers =
     typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
       ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__

@@ -29,6 +29,7 @@
     "clean": "yarn workspaces run clean",
     "clean:cov": "yarn workspaces run clean:cov",
     "dev": "npm start",
+    "lint": "./scripts/tools/lint_all.sh",
     "lint-staged": "lint-staged",
     "prettier-all": "prettier --write 'packages/**/src/**/*.{ts,tsx}' '!src/{assets,datas}/**'",
     "start": "(cd packages/rtw-host-app && npm start)",
@@ -39,10 +40,7 @@
     "upgrade": "./scripts/tools/upgrade_pkgs.sh"
   },
   "devDependencies": {
-    "@wx-fc/app-config": "0.1.37",
-    "@wx-fc/babel-preset": "^0.0.1",
-    "babel-loader": "^8.0.6",
-    "svg-inline-loader": "^0.8.0"
+    "@wx-fc/app-config": "0.1.38"
   },
   "browserslist": [
     "extends @wx-fc/browserslist-config/modern"

@@ -5,12 +5,12 @@ import ProLayout, {
 import { Icon } from 'antd';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import SVG from 'react-inlinesvg';
 
 import { formatMessage } from '@/i18n';
 import { checkPermissions } from '@/skeleton/auth';
 import { getAuthority, setAuthority } from '@/skeleton/auth/authority';
 
-import Logo from '../../assets/logo.svg';
 import { RightContent } from '../components/GlobalHeader/RightContent';
 import { menu } from '../menu';
 
@@ -59,10 +59,6 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
 
   const [collapse, toggleCollapse] = React.useState(true);
 
-  /**
-   * init variables
-   */
-
   const handleMenuCollapse = (payload: boolean): void => {
     toggleCollapse(payload);
   };
@@ -81,7 +77,12 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
         <ProLayout
           {...props}
           collapsed={collapse}
-          logo={<Logo style={{ transform: 'scale(0.2)' }} />}
+          logo={
+            <SVG
+              src="https://cdn.svgporn.com/logos/react.svg"
+              style={{ transform: 'scale(0.2)' }}
+            />
+          }
           route={menu}
           title="RTW"
           siderWidth={240}

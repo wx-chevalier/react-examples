@@ -20,7 +20,7 @@ interface IProps extends RouteComponentProps {
 }
 
 interface IState {
-  appError: any;
+  appError?: any;
 }
 
 // 应用缓存
@@ -33,6 +33,8 @@ class AppContainer extends PureComponent<IProps, IState> {
   static defaultProps = {
     fallback: <Spin />,
   };
+
+  state = {};
 
   loadApp() {
     const { appLoader, appId, onAppendReducer } = this.props;

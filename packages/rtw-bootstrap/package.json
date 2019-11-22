@@ -36,7 +36,8 @@
     "systemjs": "^6.1.4"
   },
   "devDependencies": {
-    "@wx-fc/app-config": "^0.1.37",
+    "@wx-fc/app-config": "^0.1.38",
+    "cross-env": "^6.0.3",
     "webpack": "^4.41.2"
   },
   "files": [
