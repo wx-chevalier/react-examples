@@ -4,13 +4,14 @@ import ProLayout, {
 } from '@ant-design/pro-layout';
 import { Icon } from 'antd';
 import * as React from 'react';
-import SVG from 'react-inlinesvg';
+// import SVG from 'react-inlinesvg';
 import { Link } from 'react-router-dom';
 
 import { formatMessage } from '@/i18n';
 import { checkPermissions } from '@/skeleton/auth';
 import { getAuthority, setAuthority } from '@/skeleton/auth/authority';
 
+import Logo from '../../assets/logo.svg';
 import { RightContent } from '../components/GlobalHeader/RightContent';
 import { menu } from '../menu';
 
@@ -78,10 +79,11 @@ export const NavLayout: React.FC<NavLayoutProps> = props => {
           {...props}
           collapsed={collapse}
           logo={
-            <SVG
-              src="https://cdn.svgporn.com/logos/react.svg"
-              style={{ transform: 'scale(0.2)' }}
-            />
+            // <SVG
+            //   src="https://cdn.svgporn.com/logos/react.svg"
+            //   style={{ transform: 'scale(0.2)' }}
+            // />
+            <Logo style={{ transform: 'scale(0.2)' }} />
           }
           route={menu}
           title="RTW"

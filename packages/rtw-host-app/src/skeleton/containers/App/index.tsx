@@ -53,7 +53,7 @@ export class App extends React.Component<IAppProps, IAppState> {
 
     return (
       <section className={styles.container}>
-        <NavLayout matchedPath={location.pathname}>
+        <NavLayout matchedPath={location.pathname} disableContentMargin={false}>
           <Switch>
             <Route exact={true} path="/">
               <Redirect to={routes[0]} />
