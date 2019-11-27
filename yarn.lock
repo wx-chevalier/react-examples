@@ -2873,10 +2873,10 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wx-fc/app-config@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@wx-fc/app-config/-/app-config-0.2.3.tgz#ede37a1d4f7ff28fd519843891b9e415d1775737"
-  integrity sha512-X0P0IiS3lt975mvY4a370offWgOpFE1KjPvailyhZXRjXBMzk9d2ecBwWYfPfoK0jtqFhlLnMHq+dbHgP4zxMg==
+"@wx-fc/app-config@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@wx-fc/app-config/-/app-config-0.2.6.tgz#60596844d11cf33f758f2b569fecc3dcf82b52cd"
+  integrity sha512-d40zdUmh8lBWy/idp2Ed0vC6JvePL4IsVJBGpytZvBe0abAhxwZj08/kUrCAcb9RXTUkwozbSULsQ6Mms02Sxw==
   dependencies:
     "@svgr/webpack" "^4.3.3"
     "@types/classnames" "^2.2.9"
@@ -2902,7 +2902,7 @@
     "@wx-fc/stylelint-config" "^0.0.6"
     "@wx-fc/tsconfig" "^0.0.3"
     "@wx-fc/tslint-config" "^0.0.1"
-    "@wx-fc/webpack-config" "^0.0.18"
+    "@wx-fc/webpack-config" "^0.0.21"
     eslint "^6.7.1"
     husky "^3.1.0"
     json-server "0.15.1"
@@ -3088,11 +3088,12 @@
     tslint-plugin-prettier "^2.0.1"
     tslint-react "^4.1.0"
 
-"@wx-fc/webpack-config@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@wx-fc/webpack-config/-/webpack-config-0.0.18.tgz#56cd6dc6c29b5aa008945d9ed5b48fef057f7b44"
-  integrity sha512-wELejA2LIRjgSxVbb8IZDSjYiMhAD7Y7vDYSVMBDYxXng6AhSSEVxLkiZHx9lYAFGZViPHNvIcdCydMG72XRrA==
+"@wx-fc/webpack-config@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@wx-fc/webpack-config/-/webpack-config-0.0.21.tgz#4afb54b774d187a5fc55f7ff729ee204c65a6653"
+  integrity sha512-xajp11v2QI6kU7JHgecc7dGOtZrWzyPRc9+zcoOTgyO4uWeJZDGXd/9m6f1kNVmO61OR67W6Ko5IUyj+65khOQ==
   dependencies:
+    "@hot-loader/react-dom" "^16.11.0"
     "@svgr/webpack" "^4.3.2"
     awesome-typescript-loader "^5.2.1"
     babel-loader "^8.0.6"
@@ -3119,7 +3120,6 @@
     svg-inline-loader "^0.8.0"
     terser-webpack-plugin "^2.2.1"
     thread-loader "^2.1.3"
-    ts-import-plugin "^1.6.1"
     ts-loader "6.2.1"
     tsconfig-paths-webpack-plugin "^3.2.0"
     uglifyjs-webpack-plugin "2.2.0"
@@ -18170,14 +18170,6 @@ trough@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.4.tgz#3b52b1f13924f460c3fbfd0df69b587dbcbc762e"
   integrity sha512-tdzBRDGWcI1OpPVmChbdSKhvSVurznZ8X36AYURAcl+0o2ldlCY2XPzyXNNxwJwwyIU+rIglTCG4kxtNKBQH7Q==
-
-ts-import-plugin@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/ts-import-plugin/-/ts-import-plugin-1.6.1.tgz#96477d241a154954508aa1397be03000735f98d0"
-  integrity sha512-aalTycdTYY0NNosJ+XqDqzzBH1wyhE9pykcXd5TjF902j+nUlhjW7uWje2Xny+lPL1w+46Uaf5TsReirI5igiA==
-  dependencies:
-    opencollective-postinstall "^2.0.2"
-    tslib "^1.10.0"
 
 ts-jest@^24.1.0:
   version "24.2.0"

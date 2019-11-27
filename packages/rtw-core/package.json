@@ -32,7 +32,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@wx-fc/app-config": "^0.2.3",
+    "@wx-fc/app-config": "^0.2.6",
     "cross-env": "^6.0.3",
     "webpack": "^4.41.2"
   },

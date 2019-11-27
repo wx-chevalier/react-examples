@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^4.3.3",
-    "@wx-fc/app-config": "^0.2.3"
+    "@wx-fc/app-config": "^0.2.6"
   },
   "browserslist": [
     "extends @wx-fc/browserslist-config/modern"
