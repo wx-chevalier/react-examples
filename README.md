@@ -16,7 +16,7 @@ mf-rtw 是 [fe-boilerplates](https://github.com/wx-chevalier/fe-boilerplates) �
 
 ```sh
 # 拉取并且提取出子项目
-$ git clone https://github.com/wx-chevalier/m-fe-rtw
+$ git clone https://github.com/FE-Kits/m-fe-rtw
 
 # 添加全局的依赖更新工具
 $ yarn global add npm-check-updates
