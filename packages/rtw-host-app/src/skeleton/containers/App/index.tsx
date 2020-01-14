@@ -67,4 +67,4 @@ export class App extends React.Component<IAppProps, IAppState> {
   }
 }
 
-export default connect(state => ({ ...state }), {})(withRouter(App));
+export default connect(_state => ({}), {})(withRouter(App));
