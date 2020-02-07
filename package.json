@@ -6,15 +6,8 @@
     "type": "git",
     "url": "https://github.com/wx-chevalier/m-fe-rtw"
   },
-  "license": "MIT",
-  "keywords": [
-    "react",
-    "redux",
-    "mobx",
-    "webpack",
-    "typescript"
-  ],
   "author": "wx-chevalier@github",
+  "license": "MIT",
   "private": true,
   "workspaces": [
     "packages/rtw-core",
@@ -22,21 +15,28 @@
     "packages/rtw-components",
     "packages/rtw-host-app"
   ],
+  "keywords": [
+    "react",
+    "redux",
+    "mobx",
+    "webpack",
+    "typescript"
+  ],
   "scripts": {
-    "postinstall": "node ./node_modules/husky/lib/installer/bin install",
     "bootstrap": "yarn install && yarn run build",
-    "build": "npm run clean && yarn workspaces run build",
+    "build": "npm run clean && yarn workspaces run build && cp -r ./packages/rtw-host-app/build ./build",
     "clean": "yarn workspaces run clean",
     "clean:cov": "yarn workspaces run clean:cov",
     "dev": "npm start",
     "lint": "./scripts/tools/lint_all.sh",
     "lint-staged": "lint-staged",
+    "postinstall": "node ./node_modules/husky/lib/installer/bin install",
     "prettier-all": "prettier --write 'packages/**/src/**/*.{ts,tsx}' '!src/{assets,datas}/**'",
     "start": "(cd packages/rtw-host-app && npm start)",
     "start:m-fe": "./scripts/tools/start_micro.sh",
     "test": "yarn workspaces run test",
-    "test:watch": "yarn workspaces run test:watch",
     "test:cov": "yarn workspaces run test:cov",
+    "test:watch": "yarn workspaces run test:watch",
     "upgrade": "./scripts/tools/upgrade_pkgs.sh"
   },
   "devDependencies": {

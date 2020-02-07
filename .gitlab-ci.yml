@@ -1,9 +1,9 @@
 variables:
   DOCKER_DRIVER: overlay2
-  EFF_NO_LINK_RULES: "true"
+  EFF_NO_LINK_RULES: 'true'
   GIT_CLEAN_FLAGS: -ffdx -e /dist/
   NODE_OPTIONS: --max-old-space-size=2048
-  PARSER_NO_WATCH: "true"
+  PARSER_NO_WATCH: 'true'
 
 build image:
   only:
@@ -17,8 +17,9 @@ build image:
     - docker info
     - docker login ${DOCKER_REGISTRY_SERVER} -u ${DOCKER_REGISTRY_USER} -p ${DOCKER_REGISTRY_PASSWORD}
   script:
-    - if [ "master" == "$CI_COMMIT_REF_NAME" ]; then export IMAGE_SUFFIX="-prod"; fi
-    - export IMAGE=${DOCKER_REGISTRY_SERVER}/m-fe-rtw$IMAGE_SUFFIX
-    - docker build --tag $IMAGE:$CI_COMMIT_SHA --tag $IMAGE:latest -f scripts/docker/Dockerfile .
-    - docker push $IMAGE:$CI_COMMIT_SHA
-    - docker push $IMAGE:latest
+    # - if [ "master" == "$CI_COMMIT_REF_NAME" ]; then export IMAGE_SUFFIX="-prod"; fi
+    - export IMAGE=${DOCKER_REGISTRY_SERVER}/m-fe-rtw
+    # - docker build --tag $IMAGE:$CI_COMMIT_SHA --tag $IMAGE:latest -f scripts/docker/Dockerfile .
+    # - docker push $IMAGE:$CI_COMMIT_SHA
+    # - docker push $IMAGE:latest
+    - sh ./scripts/docker/build-on-gitlab.sh
