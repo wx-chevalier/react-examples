@@ -46,7 +46,7 @@ build_tag() {
 #   DOCKERFILE
 #######################################
 build_master() {
-	local image_tag=${PACKAGE_VERSION}
+	local image_tag=v${PACKAGE_VERSION}-rc
 	echo "[1/2] Building ${IMAGE}:${image_tag}"
 	docker build -t ${IMAGE}:${image_tag} -f ${DOCKERFILE} .
 

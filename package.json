@@ -40,8 +40,8 @@
     "upgrade": "./scripts/tools/upgrade_pkgs.sh"
   },
   "devDependencies": {
-    "@svgr/webpack": "^4.3.3",
-    "@wx-fc/app-config": "^0.2.6"
+    "@svgr/webpack": "^5.1.0",
+    "@wx-fc/app-config": "^0.3.1"
   },
   "browserslist": [
     "extends @wx-fc/browserslist-config/modern"
