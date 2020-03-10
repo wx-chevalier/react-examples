@@ -6,39 +6,39 @@
     "type": "git",
     "url": "https://github.com/wx-chevalier/fe-boilerplates"
   },
+  "author": "wx-chevalier@github",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "keywords": [
     "webpack",
     "react"
   ],
-  "author": "wx-chevalier@github",
   "scripts": {
-    "clean": "rimraf dist",
     "build": "npm run build:es && npm run build:cjs && npm run build:umd",
-    "build:es": "tsc --project ./tsconfig.es.json",
     "build:cjs": "tsc --project ./tsconfig.cjs.json",
+    "build:es": "tsc --project ./tsconfig.es.json",
     "build:umd": "cross-env NODE_ENV=production webpack -p --config ./scripts/webpack/webpack.config.umd.js",
+    "clean": "rimraf dist",
     "dev": "tsc -w --project ./tsconfig.cjs.json",
     "lint": "run-p lint:*",
     "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache --ext js,md,ts,tsx -f friendly --max-warnings 10",
     "lint:ts": "tslint -p . -t stylish",
     "lint:tsc": "tsc -p tsconfig.json --incremental false --noEmit",
     "test": "jest --config ./scripts/jest/jest.config.js",
-    "test:watch": "npm test -- --watch",
-    "test:cov": "npm run cleanCov && npm test -- --coverage"
+    "test:cov": "npm run cleanCov && npm test -- --coverage",
+    "test:watch": "npm test -- --watch"
   },
   "dependencies": {},
   "devDependencies": {
-    "@wx-fc/app-config": "^0.2.6",
+    "@wx-fc/app-config": "^0.3.7",
     "cross-env": "^6.0.3",
     "webpack": "^4.41.2"
   },
-  "files": [
-    "dist/"
-  ],
   "browserslist": [
     "extends @wx-fc/browserslist-config/modern"
   ],

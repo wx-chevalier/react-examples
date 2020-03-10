@@ -1,26 +1,25 @@
 {
-  "author": "wx-chevalier@github",
-  "description": "rtw-host-app",
-  "license": "MIT",
-  "keywords": [
-    "webpack",
-    "react"
-  ],
   "name": "rtw-host-app",
   "version": "0.0.1",
+  "description": "rtw-host-app",
   "repository": {
     "type": "git",
     "url": "https://github.com/wx-chevalier/fe-boilerplates"
   },
+  "author": "wx-chevalier@github",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
+  "keywords": [
+    "webpack",
+    "react"
+  ],
   "scripts": {
-    "prebuild": "npm run clean && npm run cleanCov",
-    "clean": "rimraf dist/* && rimraf build/*",
-    "cleanCov": "rimraf @coverage",
     "build": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.prod.js -p",
     "build:umd": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.umd.js -p",
+    "clean": "rimraf dist/* && rimraf build/*",
+    "cleanCov": "rimraf @coverage",
     "dev": "webpack-dev-server --config ./scripts/webpack/webpack.config.dev.js --hot --progress",
     "dev:umd": "webpack-dev-server --config ./scripts/webpack/webpack.config.umd.dev.js --hot",
     "lint": "run-p lint:*",
@@ -28,11 +27,12 @@
     "lint:style": "stylelint **/*.less --cache",
     "lint:ts": "tslint -p . -t stylish",
     "lint:tsc": "tsc -p tsconfig.json --incremental false --noEmit",
+    "prebuild": "npm run clean && npm run cleanCov",
+    "start": "npm run dev",
     "test": "jest --config ../../scripts/jest/jest.config.js",
-    "test:watch": "npm test -- --watch",
     "test:cov": "npm run cleanCov && npm test -- --coverage",
     "test:update": "npm test -- --updateSnapshot",
-    "start": "npm run dev"
+    "test:watch": "npm test -- --watch"
   },
   "dependencies": {
     "@ant-design/pro-layout": "^4.7.3",
@@ -64,7 +64,7 @@
     "umi-request": "^1.2.10"
   },
   "devDependencies": {
-    "@wx-fc/app-config": "^0.2.6",
+    "@wx-fc/app-config": "^0.3.7",
     "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "npm-run-all": "^4.1.5",
