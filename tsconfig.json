@@ -2,9 +2,7 @@
   "extends": "@wx-fc/tsconfig/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["packages/rtw-host-app/src/*"]
-    },
+    "paths": {},
     "strictFunctionTypes": false,
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true
