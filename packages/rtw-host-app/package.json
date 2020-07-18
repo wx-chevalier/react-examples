@@ -43,7 +43,7 @@
     "dayjs": "^1.8.17",
     "dayjs-ext": "^2.2.0",
     "interactjs": "^1.7.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mobile-detect": "^1.4.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
