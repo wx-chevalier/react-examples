@@ -1,0 +1,326 @@
+
+<template name="taro_tmpl">
+  <block tt:for="{{root.cn}}" tt:key="uid">
+    <template is="tmpl_0_container" data="{{i:item}}" />
+  </block>
+</template>
+
+<template name="tmpl_0_catch-view">
+  <view hover-class="{{i.hoverClass===undefined?'none':i.hoverClass}}" hover-stop-propagation="{{i.hoverStopPropagation===undefined?false:i.hoverStopPropagation}}" hover-start-time="{{i.hoverStartTime===undefined?50:i.hoverStartTime}}" hover-stay-time="{{i.hoverStayTime===undefined?400:i.hoverStayTime}}" animation="{{i.animation}}" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongtap="eh" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" hidden="{{i.hidden}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </view>
+</template>
+
+<template name="tmpl_0_static-view">
+  <view hover-class="{{i.hoverClass===undefined?'none':i.hoverClass}}" hover-stop-propagation="{{i.hoverStopPropagation===undefined?false:i.hoverStopPropagation}}" hover-start-time="{{i.hoverStartTime===undefined?50:i.hoverStartTime}}" hover-stay-time="{{i.hoverStayTime===undefined?400:i.hoverStayTime}}" animation="{{i.animation}}" hidden="{{i.hidden}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </view>
+</template>
+
+<template name="tmpl_0_pure-view">
+  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </view>
+</template>
+
+<template name="tmpl_0_view">
+  <view hover-class="{{i.hoverClass===undefined?'none':i.hoverClass}}" hover-stop-propagation="{{i.hoverStopPropagation===undefined?false:i.hoverStopPropagation}}" hover-start-time="{{i.hoverStartTime===undefined?50:i.hoverStartTime}}" hover-stay-time="{{i.hoverStayTime===undefined?400:i.hoverStayTime}}" animation="{{i.animation}}" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongtap="eh" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" hidden="{{i.hidden}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </view>
+</template>
+
+<template name="tmpl_0_static-text">
+  <text selectable="{{i.selectable===undefined?false:i.selectable}}" space="{{i.space}}" decode="{{i.decode===undefined?false:i.decode}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </text>
+</template>
+
+<template name="tmpl_0_text">
+  <text selectable="{{i.selectable===undefined?false:i.selectable}}" space="{{i.space}}" decode="{{i.decode===undefined?false:i.decode}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </text>
+</template>
+
+<template name="tmpl_0_button">
+  <button size="{{i.size===undefined?'default':i.size}}" type="{{i.type}}" plain="{{i.plain===undefined?false:i.plain}}" disabled="{{i.disabled}}" loading="{{i.loading===undefined?false:i.loading}}" form-type="{{i.formType}}" open-type="{{i.openType}}" hover-class="{{i.hoverClass===undefined?'button-hover':i.hoverClass}}" hover-stop-propagation="{{i.hoverStopPropagation===undefined?false:i.hoverStopPropagation}}" hover-start-time="{{i.hoverStartTime===undefined?20:i.hoverStartTime}}" hover-stay-time="{{i.hoverStayTime===undefined?70:i.hoverStayTime}}" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </button>
+</template>
+
+<template name="tmpl_0_checkbox">
+  <checkbox value="{{i.value}}" disabled="{{i.disabled}}" checked="{{i.checked===undefined?false:i.checked}}" color="{{i.color===undefined?'#09BB07':i.color}}" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </checkbox>
+</template>
+
+<template name="tmpl_0_checkbox-group">
+  <checkbox-group bindchange="eh" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </checkbox-group>
+</template>
+
+<template name="tmpl_0_input">
+  <template is="{{i.focus ? 'tmpl_0_input_focus' : 'tmpl_0_input_blur'}}" data="{{i:i}}" />
+</template>
+
+<template name="tmpl_0_input_focus">
+  <input value="{{i.value}}" type="{{i.type===undefined?'':i.type}}" password="{{i.password===undefined?false:i.password}}" placeholder="{{i.placeholder}}" placeholder-style="{{i.placeholderStyle}}" placeholder-class="{{i.placeholderClass===undefined?'input-placeholder':i.placeholderClass}}" disabled="{{i.disabled}}" maxlength="{{i.maxlength===undefined?140:i.maxlength}}" cursor-spacing="{{i.cursorSpacing===undefined?0:i.cursorSpacing}}" focus="{{i.focus===undefined?false:i.focus}}" confirm-type="{{i.confirmType===undefined?'done':i.confirmType}}" confirm-hold="{{i.confirmHold===undefined?false:i.confirmHold}}" cursor="{{i.cursor===undefined?i.value.length:i.cursor}}" selection-start="{{i.selectionStart===undefined?-1:i.selectionStart}}" selection-end="{{i.selectionEnd===undefined?-1:i.selectionEnd}}" bindinput="eh" bindfocus="eh" bindblur="eh" bindconfirm="eh" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}" />
+</template>
+
+<template name="tmpl_0_input_blur">
+  <input value="{{i.value}}" type="{{i.type===undefined?'':i.type}}" password="{{i.password===undefined?false:i.password}}" placeholder="{{i.placeholder}}" placeholder-style="{{i.placeholderStyle}}" placeholder-class="{{i.placeholderClass===undefined?'input-placeholder':i.placeholderClass}}" disabled="{{i.disabled}}" maxlength="{{i.maxlength===undefined?140:i.maxlength}}" cursor-spacing="{{i.cursorSpacing===undefined?0:i.cursorSpacing}}" confirm-type="{{i.confirmType===undefined?'done':i.confirmType}}" confirm-hold="{{i.confirmHold===undefined?false:i.confirmHold}}" cursor="{{i.cursor===undefined?i.value.length:i.cursor}}" selection-start="{{i.selectionStart===undefined?-1:i.selectionStart}}" selection-end="{{i.selectionEnd===undefined?-1:i.selectionEnd}}" bindinput="eh" bindfocus="eh" bindblur="eh" bindconfirm="eh" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}" />
+</template>
+
+<template name="tmpl_0_label">
+  <label for="{{i.for}}" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </label>
+</template>
+
+<template name="tmpl_0_picker">
+  <picker mode="{{i.mode===undefined?'selector':i.mode}}" disabled="{{i.disabled}}" range="{{i.range}}" range-key="{{i.rangeKey}}" value="{{i.value}}" start="{{i.start}}" end="{{i.end}}" fields="{{i.fields===undefined?'day':i.fields}}" custom-item="{{i.customItem}}" name="{{i.name}}" bindcancel="eh" bindchange="eh" bindcolumnchange="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </picker>
+</template>
+
+<template name="tmpl_0_textarea">
+  <template is="{{i.focus ? 'tmpl_0_textarea_focus' : 'tmpl_0_textarea_blur'}}" data="{{i:i}}" />
+</template>
+
+<template name="tmpl_0_textarea_focus">
+  <textarea value="{{i.value}}" placeholder="{{i.placeholder}}" placeholder-style="{{i.placeholderStyle}}" placeholder-class="{{i.placeholderClass===undefined?'textarea-placeholder':i.placeholderClass}}" disabled="{{i.disabled}}" maxlength="{{i.maxlength===undefined?140:i.maxlength}}" auto-focus="{{i.autoFocus===undefined?false:i.autoFocus}}" focus="{{i.focus===undefined?false:i.focus}}" auto-height="{{i.autoHeight===undefined?false:i.autoHeight}}" fixed="{{i.fixed===undefined?false:i.fixed}}" cursor-spacing="{{i.cursorSpacing===undefined?0:i.cursorSpacing}}" cursor="{{i.cursor===undefined?-1:i.cursor}}" selection-start="{{i.selectionStart===undefined?-1:i.selectionStart}}" selection-end="{{i.selectionEnd===undefined?-1:i.selectionEnd}}" bindfocus="eh" bindblur="eh" bindlinechange="eh" bindinput="eh" bindconfirm="eh" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}" />
+</template>
+
+<template name="tmpl_0_textarea_blur">
+  <textarea value="{{i.value}}" placeholder="{{i.placeholder}}" placeholder-style="{{i.placeholderStyle}}" placeholder-class="{{i.placeholderClass===undefined?'textarea-placeholder':i.placeholderClass}}" disabled="{{i.disabled}}" maxlength="{{i.maxlength===undefined?140:i.maxlength}}" auto-focus="{{i.autoFocus===undefined?false:i.autoFocus}}" auto-height="{{i.autoHeight===undefined?false:i.autoHeight}}" fixed="{{i.fixed===undefined?false:i.fixed}}" cursor-spacing="{{i.cursorSpacing===undefined?0:i.cursorSpacing}}" cursor="{{i.cursor===undefined?-1:i.cursor}}" selection-start="{{i.selectionStart===undefined?-1:i.selectionStart}}" selection-end="{{i.selectionEnd===undefined?-1:i.selectionEnd}}" bindfocus="eh" bindblur="eh" bindlinechange="eh" bindinput="eh" bindconfirm="eh" name="{{i.name}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}" />
+</template>
+
+<template name="tmpl_0_scroll-view">
+  <scroll-view scroll-x="{{i.scrollX===undefined?false:i.scrollX}}" scroll-y="{{i.scrollY===undefined?false:i.scrollY}}" upper-threshold="{{i.upperThreshold===undefined?50:i.upperThreshold}}" lower-threshold="{{i.lowerThreshold===undefined?50:i.lowerThreshold}}" scroll-top="{{i.scrollTop}}" scroll-left="{{i.scrollLeft}}" scroll-into-view="{{i.scrollIntoView}}" scroll-with-animation="{{i.scrollWithAnimation===undefined?false:i.scrollWithAnimation}}" enable-back-to-top="{{i.enableBackToTop===undefined?false:i.enableBackToTop}}" bindscrolltoupper="eh" bindscrolltolower="eh" bindscroll="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongtap="eh" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </scroll-view>
+</template>
+
+<template name="tmpl_0_swiper">
+  <swiper indicator-dots="{{i.indicatorDots===undefined?false:i.indicatorDots}}" indicator-color="{{i.indicatorColor===undefined?'rgba(0, 0, 0, .3)':i.indicatorColor}}" indicator-active-color="{{i.indicatorActiveColor===undefined?'#000000':i.indicatorActiveColor}}" autoplay="{{i.autoplay===undefined?false:i.autoplay}}" current="{{i.current===undefined?0:i.current}}" interval="{{i.interval===undefined?5000:i.interval}}" duration="{{i.duration===undefined?500:i.duration}}" circular="{{i.circular===undefined?false:i.circular}}" vertical="{{i.vertical===undefined?false:i.vertical}}" previous-margin="{{i.previousMargin===undefined?'0px':i.previousMargin}}" next-margin="{{i.nextMargin===undefined?'0px':i.nextMargin}}" display-multiple-items="{{i.displayMultipleItems===undefined?1:i.displayMultipleItems}}" bindchange="eh" bindtransition="eh" bindanimationfinish="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongtap="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </swiper>
+</template>
+
+<template name="tmpl_0_swiper-item">
+  <swiper-item item-id="{{i.itemId}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </swiper-item>
+</template>
+
+<template name="tmpl_0_static-image">
+  <image src="{{i.src}}" mode="{{i.mode===undefined?'scaleToFill':i.mode}}" lazy-load="{{i.lazyLoad===undefined?false:i.lazyLoad}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </image>
+</template>
+
+<template name="tmpl_0_image">
+  <image src="{{i.src}}" mode="{{i.mode===undefined?'scaleToFill':i.mode}}" lazy-load="{{i.lazyLoad===undefined?false:i.lazyLoad}}" binderror="eh" bindload="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongtap="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </image>
+</template>
+
+<template name="tmpl_0_canvas">
+  <canvas canvas-id="{{i.canvasId}}" disable-scroll="{{i.disableScroll===undefined?false:i.disableScroll}}" binderror="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongtap="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </canvas>
+</template>
+
+<template name="tmpl_0_block">
+  <block  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </block>
+</template>
+
+<template name="tmpl_0_slot">
+  <view slot="{{i.name}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </view>
+</template>
+
+<template name="tmpl_0_#text" data="{{i:i}}">
+  <block>{{i.v}}</block>
+</template>
+
+<template name="tmpl_0_native-modal">
+  <native-modal visible="{{i.visible}}" overlay="{{i.overlay}}" overlayClosable="{{i.overlayClosable}}" position="{{i.position}}" transitionName="{{i.transitionName}}" duration="{{i.duration}}" timingFunc="{{i.timingFunc}}" overlayDuration="{{i.overlayDuration}}" overlayTimingFunc="{{i.overlayTimingFunc}}" customStyle="{{i.customStyle}}" bindclose="eh" bindbeforeenter="eh" bindenter="eh" bind:after-enter="eh" bindbeforeleave="eh" bindleave="eh" bindafterclose="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-modal>
+</template>
+  
+<template name="tmpl_0_native-switch">
+  <native-switch value="{{i.value}}" loading="{{i.loading}}" platform="{{i.platform}}" size="{{i.size}}" disabled="{{i.disabled}}" bindchange="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-switch>
+</template>
+  
+<template name="tmpl_0_selector">
+  <selector title="{{i.title}}" placeholder="{{i.placeholder}}" show="{{i.show}}" options="{{i.options}}" mode="{{i.mode}}" hideSearch="{{i.hideSearch}}" value="{{i.value}}" bindclose="eh" bindchange="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </selector>
+</template>
+  
+<template name="tmpl_0_native-avatar">
+  <native-avatar src="{{i.src}}" size="{{i.size}}" shape="{{i.shape}}" alt="{{i.alt}}" defaultSrc="{{i.defaultSrc}}" text="{{i.text}}" customStyle="{{i.customStyle}}" needInnerStoke="{{i.needInnerStoke}}" bindclick="eh" binderror="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-avatar>
+</template>
+  
+<template name="tmpl_0_native-breadcrumb">
+  <native-breadcrumb items="{{i.items}}" separatorIcon="{{i.separatorIcon}}" scrollPaddingX="{{i.scrollPaddingX}}" binditemclick="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-breadcrumb>
+</template>
+  
+<template name="tmpl_0_native-button">
+  <native-button type="{{i.type}}" shape="{{i.shape}}" size="{{i.size}}" loading="{{i.loading}}" disabled="{{i.disabled}}" block="{{i.block}}" warn="{{i.warn}}" icon="{{i.icon}}" ghost="{{i.ghost}}" selected="{{i.selected}}" boarding="{{i.boarding}}" customStyle="{{i.customStyle}}" formType="{{i.formType}}" openType="{{i.openType}}" hoverClass="{{i.hoverClass}}" hoverStopPropagation="{{i.hoverStopPropagation}}" bindclick="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-button>
+</template>
+  
+<template name="tmpl_0_native-checkbox">
+  <native-checkbox value="{{i.value}}" disabled="{{i.disabled}}" shape="{{i.shape}}" color="{{i.color}}" align="{{i.align}}" indeterminate="{{i.indeterminate}}" bindchange="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-checkbox>
+</template>
+  
+<template name="tmpl_0_native-checkbox-group">
+  <native-checkbox-group value="{{i.value}}" bindchange="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-checkbox-group>
+</template>
+  
+<template name="tmpl_0_native-dialog">
+  <native-dialog title="{{i.title}}" titleAlign="{{i.titleAlign}}" overlay="{{i.overlay}}" overlayClosable="{{i.overlayClosable}}" visible="{{i.visible}}" buttons="{{i.buttons}}" okText="{{i.okText}}" cancelText="{{i.cancelText}}" buttonDirection="{{i.buttonDirection}}" showButtons="{{i.showButtons}}" bindclose="eh" bindcancel="eh" bindafterclose="eh" bindok="eh" bindbuttonclick="eh" width="{{i.width}}" description="{{i.description}}" type="{{i.type}}" icon="{{i.icon}}" closable="{{i.closable}}" okBtnConfig="{{i.okBtnConfig}}" cancelBtnConfig="{{i.cancelBtnConfig}}" confirmLoading="{{i.confirmLoading}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-dialog>
+</template>
+  
+<template name="tmpl_0_native-fab">
+  <native-fab type="{{i.type}}" disabled="{{i.disabled}}" top="{{i.top}}" icon="{{i.icon}}" bottom="{{i.bottom}}" left="{{i.left}}" right="{{i.right}}" bindclick="eh" formType="{{i.formType}}" openType="{{i.openType}}" hoverClass="{{i.hoverClass}}" hoverStopPropagation="{{i.hoverStopPropagation}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-fab>
+</template>
+  
+<template name="tmpl_0_native-icon">
+  <native-icon name="{{i.name}}" customStyle="{{i.customStyle}}" color="{{i.color}}" size="{{i.size}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-icon>
+</template>
+  
+<template name="tmpl_0_native-list">
+  <native-list title="{{i.title}}" description="{{i.description}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-list>
+</template>
+  
+<template name="tmpl_0_native-list-item">
+  <native-list-item title="{{i.title}}" description="{{i.description}}" size="{{i.size}}" clickable="{{i.clickable}}" showArrow="{{i.showArrow}}" borderType="{{i.borderType}}" ellipsisLine="{{i.ellipsisLine}}" bindclick="eh" icon="{{i.icon}}" footer="{{i.footer}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-list-item>
+</template>
+  
+<template name="tmpl_0_native-loading">
+  <native-loading type="{{i.type}}" loading="{{i.loading}}" delay="{{i.delay}}" text="{{i.text}}" vertical="{{i.vertical}}" iconSize="{{i.iconSize}}" iconColor="{{i.iconColor}}" loadingImageUrl="{{i.loadingImageUrl}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-loading>
+</template>
+  
+<template name="tmpl_0_reaction-panel">
+  <reaction-panel bindreactiontap="eh" ispc="{{i.ispc}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </reaction-panel>
+</template>
+  
+<template name="tmpl_0_native-tab">
+  <native-tab title="{{i.title}}" tabKey="{{i.tabKey}}" dot="{{i.dot}}" info="{{i.info}}" customStyle="{{i.customStyle}}"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-tab>
+</template>
+  
+<template name="tmpl_0_native-tabs">
+  <native-tabs active="{{i.active}}" swipeThreshold="{{i.swipeThreshold}}" animated="{{i.animated}}" swipeable="{{i.swipeable}}" lazyRender="{{i.lazyRender}}" tabGap="{{i.tabGap}}" trackCustomStyle="{{i.trackCustomStyle}}" showRightMaskBar="{{i.showRightMaskBar}}" shouldEmitLockEvent="{{i.shouldEmitLockEvent}}" destroyOnInactive="{{i.destroyOnInactive}}" bindclick="eh" bindchange="eh" bindtouchtab="eh" bindtouchtabend="eh"  id="{{i.uid}}">
+    <block tt:for="{{i.cn}}" tt:key="uid">
+      <template is="tmpl_0_container" data="{{i:item}}" />
+    </block>
+  </native-tabs>
+</template>
+  
+<template name="tmpl_0_container">
+  <template is="{{'tmpl_0_' + i.nn}}" data="{{i:i}}" />
+</template>

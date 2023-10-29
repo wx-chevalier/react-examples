@@ -1,0 +1,19 @@
+.wrapper {
+  color: black;
+  margin: 10px 10px;
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px;
+}
+
+.class-sample {
+  color: #f98e8b;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 10px;
+}

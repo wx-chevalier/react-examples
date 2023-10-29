@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"module": "CommonJS",
+		"target": "ES2020",
+		"sourceMap": false,
+		"declaration": false,
+		"alwaysStrict": true,
+		"jsx": "react",
+		"moduleResolution": "node",
+		"esModuleInterop": true
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/page-entry/index",
+    "pages/page-second/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#f5f6f7",
+    "navigationBarTextStyle": "black"
+  },
+  "entryPagePath": "pages/page-entry/index"
+}
