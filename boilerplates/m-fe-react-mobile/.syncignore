@@ -1,0 +1,7 @@
+**/*.ts
+**/*.js.map
+{**/*.js.map,**/node_modules/**,src/**}
+packages/**
+scripts/**
+node_modules/**
+./node_modules

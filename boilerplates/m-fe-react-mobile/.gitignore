@@ -1,0 +1,11 @@
+!/.vscode/settings.json
+*.log
+*.tsbuildinfo
+.cache
+.*cache
+build
+coverage
+dist
+node_modules
+report.*.json
+*.cli

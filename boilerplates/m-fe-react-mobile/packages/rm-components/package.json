@@ -1,0 +1,60 @@
+{
+  "name": "rm-components",
+  "version": "0.0.1",
+  "description": "rm-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wx-chevalier/fe-boilerplates"
+  },
+  "author": "wx-chevalier@github",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "webpack",
+    "react"
+  ],
+  "scripts": {
+    "build": "npm run build:es && npm run build:cjs && npm run build:umd",
+    "build-storybook": "build-storybook",
+    "build:cjs": "tsc --project ./tsconfig.cjs.json",
+    "build:es": "tsc --project ./tsconfig.es.json",
+    "build:umd": "NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.umd.js -p",
+    "clean": "rimraf dist",
+    "lint": "run-p lint:*",
+    "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache --ext js,md,ts,tsx -f friendly --max-warnings 10",
+    "lint:style": "stylelint **/*.less --cache",
+    "lint:ts": "tslint -p . -t stylish",
+    "lint:tsc": "tsc -p tsconfig.json --incremental false --noEmit",
+    "start": "npm run storybook",
+    "storybook": "start-storybook -p 6006"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rm-core": "*"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-info": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "@wx-fc/app-config": "^0.2.6",
+    "cross-env": "^6.0.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,scss,less,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+  <meta name="format-detection" content="telephone=no, email=no, date=no, address=no" />
+  <title>Union Fab</title>
+  <link href="./index.css" rel="stylesheet">
+  <link href="./vendors.css" rel="stylesheet">
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+</head>
+
+<body>
+  <script>
+    apiready = function () {
+      api.setStatusBarStyle({
+        style: 'light',
+        color: '#526E9E'
+      })
+      let safeArea = api.safeArea;
+      let header = document.getElementById('header');
+      let footer = document.getElementById('footer');
+      header.style.height = (safeArea ? safeArea.top : 20) + 'px';
+      footer.style.height = (safeArea ? safeArea.bottom : 0) + 'px';
+      let main = document.getElementById("root");
+      if (main) {
+        main.style.height = main.clientHeight - (safeArea ?
+          safeArea.top : 20) + 'px';
+      }
+    }
+
+  </script>
+  <script>
+    "addEventListener" in document && document.addEventListener("DOMContentLoaded", function () {
+      FastClick.attach(document.body)
+    }, !1)
+
+  </script>
+  <div id="header"></div>
+  <div id="root"></div>
+  <div id="footer"></div>
+</body>
+
+<script type="text/javascript" src="./api.js"></script>
+<script type="text/javascript" src="./runtime.js"></script>
+<script type="text/javascript" src="./vendors.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</html>

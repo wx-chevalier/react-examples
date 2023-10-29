@@ -1,0 +1,65 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "markdown",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
+  "eslint.autoFixOnSave": false,
+  "cSpell.words": [
+    "abiosoft",
+    "addprocess",
+    "anticon",
+    "antv",
+    "autoconf",
+    "automake",
+    "bizcharts",
+    "coord",
+    "crosshairs",
+    "dind",
+    "eslintcache",
+    "ffdx",
+    "focusring",
+    "fxxking",
+    "interactjs",
+    "libtool",
+    "listitem",
+    "memi",
+    "messageformat",
+    "mobx",
+    "nameserver",
+    "nasm",
+    "popconfirm",
+    "reactablejs",
+    "renderable",
+    "serializers",
+    "sidemenu",
+    "tabpane",
+    "tinycolor",
+    "topmenu",
+    "ueact",
+    "uploader",
+    "userid",
+    "wasm",
+    "webm",
+    "workerize"
+  ],
+  "search.exclude": {
+    // Useful for debugging sometimes
+    // "**/node_modules": false,
+    "**/dist": true,
+    "**/build": true
+  },
+  "typescript.tsserver.log": "verbose",
+  "git.ignoreLimitWarning": true
+}
